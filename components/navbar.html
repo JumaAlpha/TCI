@@ -1,0 +1,469 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <!-- Logo -->
+        <div class="nav-logo">
+            <span class="logo-text">TCI</span>
+        </div>
+        
+        <!-- Hamburger Menu -->
+        <div class="hamburger-menu">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+        
+        <!-- Fullscreen Menu Overlay -->
+        <div class="menu-overlay">
+            <div class="menu-content">
+                <div class="menu-header">
+                    <span class="menu-logo">TCI</span>
+                    <div class="menu-close">×</div>
+                </div>
+                <ul class="menu-items">
+                    <li class="menu-item"><a href="#home" class="menu-link">Home</a></li>
+                    <li class="menu-item"><a href="#about" class="menu-link">About</a></li>
+                    <li class="menu-item"><a href="#gallery" class="menu-link">Gallery</a></li>
+                    <li class="menu-item"><a href="#founder" class="menu-link">Founder</a></li>
+                    <li class="menu-item"><a href="#impact" class="menu-link">Impact</a></li>
+                    <li class="menu-item"><a href="#contact" class="menu-link">Contact</a></li>
+                </ul>
+                <div class="menu-footer">
+                    <p class="menu-quote">"See beyond what is, envision what could be."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<style>
+/* Navigation Bar Styles */
+.navbar {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.8s ease;
+    pointer-events: none;
+}
+
+.navbar.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.navbar.fixed {
+    position: fixed;
+    top: 0;
+    animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo */
+.nav-logo {
+    z-index: 101;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #000;
+    letter-spacing: -2px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar.fixed .logo-text {
+    color: #ffcc00;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 101;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-menu:hover {
+    transform: scale(1.1);
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.navbar.fixed .hamburger-line {
+    background-color: #ffcc00;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Fullscreen Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 80px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.menu-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #ffcc00;
+    letter-spacing: -2px;
+}
+
+.menu-close {
+    font-size: 4rem;
+    color: #ffcc00;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.menu-close:hover {
+    transform: scale(1.2);
+}
+
+.menu-items {
+    list-style: none;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.menu-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.menu-overlay.active .menu-item {
+    animation: menuItemFade 0.5s ease forwards;
+}
+
+.menu-overlay.active .menu-item:nth-child(1) { animation-delay: 0.1s; }
+.menu-overlay.active .menu-item:nth-child(2) { animation-delay: 0.2s; }
+.menu-overlay.active .menu-item:nth-child(3) { animation-delay: 0.3s; }
+.menu-overlay.active .menu-item:nth-child(4) { animation-delay: 0.4s; }
+.menu-overlay.active .menu-item:nth-child(5) { animation-delay: 0.5s; }
+.menu-overlay.active .menu-item:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes menuItemFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: #ffcc00;
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #ffcc00;
+    transition: width 0.3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.menu-footer {
+    margin-top: auto;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-quote {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+    
+    .logo-text {
+        font-size: 2rem;
+    }
+    
+    .menu-content {
+        padding: 60px 20px;
+    }
+    
+    .menu-logo {
+        font-size: 2.5rem;
+    }
+    
+    .menu-close {
+        font-size: 3rem;
+    }
+    
+    .menu-items {
+        gap: 20px;
+    }
+    
+    .menu-link {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        height: 70px;
+    }
+    
+    .logo-text {
+        font-size: 1.8rem;
+    }
+    
+    .hamburger-menu {
+        width: 30px;
+        height: 25px;
+    }
+    
+    .hamburger-line {
+        height: 2px;
+    }
+}
+</style>
+
+<script>
+// Navigation functionality
+(function() {
+    'use strict';
+    
+    // Wait for navbar to be loaded
+    const checkNavbar = setInterval(() => {
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            clearInterval(checkNavbar);
+            initNavbar();
+        }
+    }, 100);
+    
+    function initNavbar() {
+        // Elements
+        const navbar = document.querySelector('.navbar');
+        const hamburger = document.querySelector('.hamburger-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const menuClose = document.querySelector('.menu-close');
+        const menuLinks = document.querySelectorAll('.menu-link');
+        
+        // State
+        let isMenuOpen = false;
+        let isNavbarFixed = false;
+        let heroHeight = window.innerHeight;
+        
+        // Initialize
+        setupNavbar();
+        
+        function setupNavbar() {
+            // Add event listeners
+            hamburger.addEventListener('click', toggleMenu);
+            menuClose.addEventListener('click', closeMenu);
+            
+            // Close menu when clicking on links
+            menuLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    closeMenu();
+                    
+                    // Get target section from href
+                    const targetId = link.getAttribute('href').substring(1);
+                    scrollToSection(targetId);
+                });
+            });
+            
+            // Close menu when clicking outside content
+            menuOverlay.addEventListener('click', (e) => {
+                if (e.target === menuOverlay) {
+                    closeMenu();
+                }
+            });
+            
+            // Handle scroll
+            window.addEventListener('scroll', handleScroll);
+            
+            // Handle resize
+            window.addEventListener('resize', handleResize);
+        }
+        
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                openMenu();
+            } else {
+                closeMenu();
+            }
+        }
+        
+        function openMenu() {
+            hamburger.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function handleScroll() {
+            const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Show navbar after hero section
+            const heroProgress = scrollY / heroHeight;
+            
+            if (heroProgress > 0.5) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+            
+            // Make navbar fixed after second section
+            if (scrollY > heroHeight * 1.1) {
+                if (!isNavbarFixed) {
+                    navbar.classList.add('fixed');
+                    isNavbarFixed = true;
+                }
+            } else {
+                if (isNavbarFixed) {
+                    navbar.classList.remove('fixed');
+                    isNavbarFixed = false;
+                }
+            }
+        }
+        
+        function scrollToSection(sectionId) {
+            // Map section IDs to scroll positions
+            const sections = {
+                'home': 0,
+                'about': heroHeight * 1, // Second section
+                'gallery': heroHeight * 2.5, // Gallery section
+                'founder': heroHeight * 3.5, // Founder section
+                'impact': heroHeight * 1.5, // Stats section
+                'contact': heroHeight * 5.5 // After typing section
+            };
+            
+            const targetPosition = sections[sectionId] || 0;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+        
+        function handleResize() {
+            heroHeight = window.innerHeight;
+        }
+        
+        // Cleanup
+        function cleanup() {
+            hamburger.removeEventListener('click', toggleMenu);
+            menuClose.removeEventListener('click', closeMenu);
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
+        }
+        
+        window.addEventListener('beforeunload', cleanup);
+    }
+})();
+</script>

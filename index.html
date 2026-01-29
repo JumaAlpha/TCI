@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCI | Cinematic Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Common Styles -->
+    <link rel="stylesheet" href="components/common.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Scroll Container -->
+    <div class="scroll-container">
+        <!-- Components will be loaded here -->
+        <div id="components-container"></div>
+    </div>
+
+    <!-- Common JavaScript -->
+    <script src="components/common.js"></script>
+    
+    <!-- Load Components -->
+<script>
+    // Function to load HTML components and execute scripts
+    async function loadComponent(url, containerId = 'components-container') {
+        try {
+            const response = await fetch(url);
+            const html = await response.text();
+            
+            // Create a temporary container
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = html;
+            
+            // Extract and execute scripts
+            const scripts = tempDiv.querySelectorAll('script');
+            const fragment = document.createDocumentFragment();
+            
+            // Add all non-script elements to fragment
+            Array.from(tempDiv.childNodes).forEach(node => {
+                if (node.nodeName !== 'SCRIPT') {
+                    fragment.appendChild(node.cloneNode(true));
+                }
+            });
+            
+            // Append the fragment to the container
+            document.getElementById(containerId).appendChild(fragment);
+            
+            // Execute scripts
+            scripts.forEach(oldScript => {
+                const newScript = document.createElement('script');
+                if (oldScript.src) {
+                    newScript.src = oldScript.src;
+                } else {
+                    newScript.textContent = oldScript.textContent;
+                }
+                document.head.appendChild(newScript);
+            });
+            
+        } catch (error) {
+            console.error(`Error loading ${url}:`, error);
+        }
+    }
+
+    // Load all components in order
+    document.addEventListener('DOMContentLoaded', async function() {
+        const components = [
+            'components/hero.html',
+            'components/navbar.html',  // Added navbar
+            'components/content.html',
+            'components/stats.html',
+            'components/gallery.html',
+            'components/founder.html',
+            'components/typing.html'
+        ];
+
+        for (const component of components) {
+            await loadComponent(component);
+        }
+        
+        // Initialize after all components are loaded
+        if (typeof initComponents === 'function') {
+            setTimeout(initComponents, 500); // Increased timeout to ensure typing section is ready
+        }
+    });
+</script>
+</body>
+</html>
