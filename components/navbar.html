@@ -1,8 +1,8 @@
 <nav class="navbar">
     <div class="nav-container">
-        <!-- Logo -->
+        <!-- Logo with Image -->
         <div class="nav-logo">
-            <span class="logo-text">TCI</span>
+            <img src="/components/images/TRIUMPHANT-CHURCH.png" alt="TCI Logo" class="logo-image">
         </div>
         
         <!-- Hamburger Menu -->
@@ -15,10 +15,7 @@
         <!-- Fullscreen Menu Overlay -->
         <div class="menu-overlay">
             <div class="menu-content">
-                <div class="menu-header">
-                    <span class="menu-logo">TCI</span>
-                    <div class="menu-close">×</div>
-                </div>
+                <!-- Removed duplicate close button from header -->
                 <ul class="menu-items">
                     <li class="menu-item"><a href="#home" class="menu-link">Home</a></li>
                     <li class="menu-item"><a href="#about" class="menu-link">About</a></li>
@@ -59,7 +56,10 @@
 .navbar.fixed {
     position: fixed;
     top: 0;
+    background: #000; /* Solid background when fixed */
     animation: slideDown 0.8s ease forwards;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Add shadow for better visibility */
+    opacity: 0.7;
 }
 
 @keyframes slideDown {
@@ -82,9 +82,19 @@
     position: relative;
 }
 
-/* Logo */
+/* Logo with Image */
 .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     z-index: 101;
+    cursor: pointer;
+}
+
+.logo-image {
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease;
 }
 
 .logo-text {
@@ -93,11 +103,23 @@
     font-weight: 900;
     color: #000;
     letter-spacing: -2px;
-    position: relative;
     transition: color 0.3s ease;
 }
 
 .navbar.fixed .logo-text {
+    color: #ffcc00;
+}
+
+.navbar.fixed .logo-image {
+    filter: brightness(0) invert(1); /* Makes logo white in fixed mode */
+    transform: scale(1.1);
+}
+
+.nav-logo:hover .logo-image {
+    transform: scale(1.1);
+}
+
+.nav-logo:hover .logo-text {
     color: #ffcc00;
 }
 
@@ -149,11 +171,16 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.98);
     z-index: 100;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 .menu-overlay.active {
@@ -168,47 +195,45 @@
     padding: 80px 40px;
     display: flex;
     flex-direction: column;
-}
-
-.menu-header {
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 60px;
 }
 
-.menu-logo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
-    font-weight: 900;
-    color: #ffcc00;
-    letter-spacing: -2px;
-}
-
-.menu-close {
+/* Close button as overlay background click */
+.menu-overlay::after {
+    content: '×';
+    position: absolute;
+    top: 30px;
+    right: 40px;
     font-size: 4rem;
     color: #ffcc00;
     cursor: pointer;
     line-height: 1;
     transition: transform 0.3s ease;
+    z-index: 102;
 }
 
-.menu-close:hover {
+.menu-overlay:hover::after {
     transform: scale(1.2);
 }
 
 .menu-items {
     list-style: none;
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .menu-item {
     opacity: 0;
     transform: translateY(20px);
+    width: 100%;
+    text-align: center;
 }
 
 .menu-overlay.active .menu-item {
@@ -237,18 +262,22 @@
     text-decoration: none;
     position: relative;
     display: inline-block;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 .menu-link:hover {
     color: #ffcc00;
+    transform: scale(1.05);
 }
 
 .menu-link::after {
     content: '';
     position: absolute;
     bottom: -5px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 3px;
     background: #ffcc00;
@@ -256,20 +285,21 @@
 }
 
 .menu-link:hover::after {
-    width: 100%;
+    width: 80%;
 }
 
 .menu-footer {
     margin-top: auto;
     padding-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    text-align: center;
 }
 
 .menu-quote {
     font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.6);
     font-style: italic;
-    text-align: center;
 }
 
 /* Responsive */
@@ -282,15 +312,17 @@
         font-size: 2rem;
     }
     
+    .logo-image {
+        height: 32px;
+    }
+    
     .menu-content {
         padding: 60px 20px;
     }
     
-    .menu-logo {
-        font-size: 2.5rem;
-    }
-    
-    .menu-close {
+    .menu-overlay::after {
+        top: 20px;
+        right: 20px;
         font-size: 3rem;
     }
     
@@ -300,6 +332,7 @@
     
     .menu-link {
         font-size: clamp(2rem, 4vw, 3rem);
+        padding: 8px 16px;
     }
 }
 
@@ -312,6 +345,10 @@
         font-size: 1.8rem;
     }
     
+    .logo-image {
+        height: 28px;
+    }
+    
     .hamburger-menu {
         width: 30px;
         height: 25px;
@@ -319,6 +356,16 @@
     
     .hamburger-line {
         height: 2px;
+    }
+    
+    .menu-overlay::after {
+        top: 15px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+    
+    .menu-link {
+        padding: 6px 12px;
     }
 }
 </style>
@@ -342,8 +389,8 @@
         const navbar = document.querySelector('.navbar');
         const hamburger = document.querySelector('.hamburger-menu');
         const menuOverlay = document.querySelector('.menu-overlay');
-        const menuClose = document.querySelector('.menu-close');
         const menuLinks = document.querySelectorAll('.menu-link');
+        const navLogo = document.querySelector('.nav-logo');
         
         // State
         let isMenuOpen = false;
@@ -356,7 +403,26 @@
         function setupNavbar() {
             // Add event listeners
             hamburger.addEventListener('click', toggleMenu);
-            menuClose.addEventListener('click', closeMenu);
+            
+            // Logo click to scroll to top
+            navLogo.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                closeMenu();
+            });
+            
+            // Close menu when clicking anywhere on overlay (except the close button area)
+            menuOverlay.addEventListener('click', (e) => {
+                // Check if click is on the overlay background (not on menu items)
+                if (e.target === menuOverlay || 
+                    e.target.classList.contains('menu-content') ||
+                    e.target.classList.contains('menu-items') ||
+                    e.target.classList.contains('menu-footer')) {
+                    closeMenu();
+                }
+            });
             
             // Close menu when clicking on links
             menuLinks.forEach(link => {
@@ -370,18 +436,18 @@
                 });
             });
             
-            // Close menu when clicking outside content
-            menuOverlay.addEventListener('click', (e) => {
-                if (e.target === menuOverlay) {
-                    closeMenu();
-                }
-            });
-            
             // Handle scroll
             window.addEventListener('scroll', handleScroll);
             
             // Handle resize
             window.addEventListener('resize', handleResize);
+            
+            // Handle escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && isMenuOpen) {
+                    closeMenu();
+                }
+            });
         }
         
         function toggleMenu() {
@@ -398,12 +464,14 @@
             hamburger.classList.add('active');
             menuOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
+            isMenuOpen = true;
         }
         
         function closeMenu() {
             hamburger.classList.remove('active');
             menuOverlay.classList.remove('active');
             document.body.style.overflow = '';
+            isMenuOpen = false;
         }
         
         function handleScroll() {
@@ -458,11 +526,11 @@
         // Cleanup
         function cleanup() {
             hamburger.removeEventListener('click', toggleMenu);
-            menuClose.removeEventListener('click', closeMenu);
+            navLogo.removeEventListener('click', scrollToTop);
             window.removeEventListener('scroll', handleScroll);
             window.removeEventListener('resize', handleResize);
+            document.removeEventListener('keydown', handleEscape);
         }
-        
         
         window.addEventListener('beforeunload', cleanup);
     }
