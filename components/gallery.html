@@ -3,37 +3,40 @@
     <div class="gallery-particles" id="galleryParticles"></div>
     <h2 class="gallery-title">Our Gallery</h2>
     
-    <!-- Category Navigation Images -->
-    <div class="gallery-categories">
-        <div class="category-item" data-category="prophetic">
-            <div class="category-image">
+    <!-- Category Navigation Images in Row Layout -->
+    <div class="gallery-categories-row">
+        <div class="category-row-item" data-category="prophetic">
+            <div class="category-row-image">
                 <img src="https://images.unsplash.com/photo-1567593810070-7a5c0925344e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                      alt="Prophetic Ministry">
-                <div class="category-overlay">
-                    <h3 class="category-title">Prophetic</h3>
-                    <p class="category-subtitle">Moments of divine revelation and spiritual guidance</p>
+                <div class="category-row-overlay">
+                    <h3 class="category-row-title">Prophetic</h3>
+                    <p class="category-row-subtitle">Moments of divine revelation and spiritual guidance</p>
+                    <div class="category-row-arrow">→</div>
                 </div>
             </div>
         </div>
         
-        <div class="category-item" data-category="praise-worship">
-            <div class="category-image">
+        <div class="category-row-item" data-category="praise-worship">
+            <div class="category-row-image">
                 <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                      alt="Praise & Worship">
-                <div class="category-overlay">
-                    <h3 class="category-title">Praise & Worship</h3>
-                    <p class="category-subtitle">Celebrating God's presence through music and dance</p>
+                <div class="category-row-overlay">
+                    <h3 class="category-row-title">Praise & Worship</h3>
+                    <p class="category-row-subtitle">Celebrating God's presence through music and dance</p>
+                    <div class="category-row-arrow">→</div>
                 </div>
             </div>
         </div>
         
-        <div class="category-item" data-category="community">
-            <div class="category-image">
+        <div class="category-row-item" data-category="community">
+            <div class="category-row-image">
                 <img src="https://images.unsplash.com/photo-1544809046-bb4777a241c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                      alt="Community Fellowship">
-                <div class="category-overlay">
-                    <h3 class="category-title">Community</h3>
-                    <p class="category-subtitle">Building relationships and sharing life together</p>
+                <div class="category-row-overlay">
+                    <h3 class="category-row-title">Community</h3>
+                    <p class="category-row-subtitle">Building relationships and sharing life together</p>
+                    <div class="category-row-arrow">→</div>
                 </div>
             </div>
         </div>
@@ -73,7 +76,7 @@
 </section>
 
 <style>
-/* GALLERY SECTION WITH CATEGORY NAVIGATION */
+/* GALLERY SECTION WITH ROW LAYOUT CATEGORIES */
 .gallery-section {
     position: absolute;
     top: 300vh;
@@ -108,10 +111,11 @@
     transform: translateY(0);
 }
 
-/* Category Navigation */
-.gallery-categories {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+/* Category Navigation in Row Layout */
+.gallery-categories-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
@@ -119,64 +123,97 @@
     padding: 0 20px;
 }
 
-.category-item {
+.category-row-item {
+    flex: 1;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    height: 400px;
+    height: 450px;
+    min-width: 300px;
     -webkit-tap-highlight-color: transparent;
 }
 
-.category-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+.category-row-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
 }
 
-.category-image {
+.category-row-image {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.category-image img {
+.category-row-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.8s ease;
 }
 
-.category-item:hover .category-image img {
-    transform: scale(1.1);
+.category-row-item:hover .category-row-image img {
+    transform: scale(1.15);
 }
 
-.category-overlay {
+.category-row-overlay {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     padding: 40px 30px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7));
     color: var(--white);
-    transform: translateY(0);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     opacity: 1;
+    transition: all 0.4s ease;
 }
 
-.category-title {
-    font-size: 2.2rem;
+.category-row-title {
+    font-size: 2.5rem;
     font-weight: 900;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: var(--lime-green);
     text-transform: uppercase;
     letter-spacing: 2px;
+    transform: translateY(0);
+    transition: transform 0.4s ease;
 }
 
-.category-subtitle {
-    font-size: 1.1rem;
+.category-row-subtitle {
+    font-size: 1.2rem;
     opacity: 0.9;
     line-height: 1.4;
     max-width: 90%;
+    margin-bottom: 20px;
+    transform: translateY(0);
+    transition: transform 0.4s ease 0.1s;
+}
+
+.category-row-arrow {
+    font-size: 2.5rem;
+    color: var(--orange);
+    font-weight: 900;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.4s ease 0.2s;
+}
+
+.category-row-item:hover .category-row-title {
+    transform: translateY(-10px);
+}
+
+.category-row-item:hover .category-row-subtitle {
+    transform: translateY(-10px);
+}
+
+.category-row-item:hover .category-row-arrow {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Gallery Content Container */
@@ -400,15 +437,27 @@
 }
 
 /* Hide categories when gallery is active */
-.gallery-categories.hidden {
+.gallery-categories-row.hidden {
     display: none;
 }
 
-/* Responsive Design */
+/* Responsive Design - Row Layout */
 @media (max-width: 1200px) {
-    .gallery-categories {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
+    .gallery-categories-row {
+        gap: 20px;
+    }
+    
+    .category-row-item {
+        height: 400px;
+        min-width: 250px;
+    }
+    
+    .category-row-title {
+        font-size: 2rem;
+    }
+    
+    .category-row-subtitle {
+        font-size: 1rem;
     }
     
     .gallery-carousel-item {
@@ -421,27 +470,61 @@
     }
 }
 
+@media (max-width: 900px) {
+    .gallery-categories-row {
+        flex-direction: column;
+        gap: 25px;
+        max-width: 600px;
+    }
+    
+    .category-row-item {
+        width: 100%;
+        height: 350px;
+        min-width: auto;
+    }
+    
+    .category-row-overlay {
+        padding: 30px 25px;
+    }
+    
+    .category-row-title {
+        font-size: 2.2rem;
+    }
+    
+    .category-row-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .gallery-section {
         padding: 60px 15px;
     }
     
-    .gallery-categories {
-        grid-template-columns: 1fr;
+    .gallery-categories-row {
         gap: 20px;
-        max-width: 500px;
     }
     
-    .category-item {
-        height: 350px;
+    .category-row-item {
+        height: 320px;
     }
     
-    .category-title {
+    .category-row-overlay {
+        padding: 25px 20px;
+    }
+    
+    .category-row-title {
         font-size: 1.8rem;
+        margin-bottom: 10px;
     }
     
-    .category-subtitle {
+    .category-row-subtitle {
         font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .category-row-arrow {
+        font-size: 2rem;
     }
     
     .gallery-carousel-container {
@@ -489,24 +572,29 @@
         padding: 40px 10px;
     }
     
-    .gallery-categories {
+    .gallery-categories-row {
         gap: 15px;
     }
     
-    .category-item {
-        height: 300px;
+    .category-row-item {
+        height: 280px;
     }
     
-    .category-overlay {
-        padding: 25px 20px;
+    .category-row-overlay {
+        padding: 20px 15px;
     }
     
-    .category-title {
-        font-size: 1.6rem;
+    .category-row-title {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
     }
     
-    .category-subtitle {
+    .category-row-subtitle {
         font-size: 0.9rem;
+    }
+    
+    .category-row-arrow {
+        font-size: 1.8rem;
     }
     
     .gallery-back-button {
@@ -559,10 +647,25 @@
         right: -15px;
     }
 }
+
+/* For very small screens */
+@media (max-width: 360px) {
+    .category-row-item {
+        height: 250px;
+    }
+    
+    .category-row-title {
+        font-size: 1.3rem;
+    }
+    
+    .category-row-subtitle {
+        font-size: 0.85rem;
+    }
+}
 </style>
 
 <script>
-// Gallery with Category Navigation
+// Gallery with Row Layout Categories
 (function() {
     'use strict';
     
@@ -680,11 +783,11 @@
     
     function initGallery() {
         // Elements
-        const categoryItems = document.querySelectorAll('.category-item');
+        const categoryItems = document.querySelectorAll('.category-row-item');
         const galleryContent = document.getElementById('galleryContent');
         const galleryBackBtn = document.getElementById('galleryBackBtn');
         const categoryTitle = document.getElementById('categoryTitle');
-        const galleryCategories = document.querySelector('.gallery-categories');
+        const galleryCategories = document.querySelector('.gallery-categories-row');
         const carousel = document.querySelector('.gallery-carousel');
         const prevBtn = document.querySelector('.carousel-arrow-prev');
         const nextBtn = document.querySelector('.carousel-arrow-next');
@@ -717,13 +820,12 @@
                     openGallery(category);
                 });
                 
-                // Add touch support for mobile
-                item.addEventListener('touchstart', function(e) {
-                    if (e.touches.length === 1) {
-                        const category = this.getAttribute('data-category');
-                        openGallery(category);
-                    }
-                }, { passive: true });
+                // Touch support for mobile
+                item.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    const category = this.getAttribute('data-category');
+                    openGallery(category);
+                });
             });
             
             // Back button
@@ -818,12 +920,6 @@
                 `;
                 
                 carousel.appendChild(carouselItem);
-                
-                // Add click event to each item
-                carouselItem.addEventListener('click', function() {
-                    // Optional: Add lightbox functionality here
-                    console.log('Clicked image:', item.title);
-                });
             });
             
             // Update carousel functionality
