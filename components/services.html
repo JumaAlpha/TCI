@@ -1,0 +1,799 @@
+<section class="services-section">
+    <div class="services-bg-pattern"></div>
+    
+    <h2 class="services-title">Our Services</h2>
+    <p class="services-subtitle">Join us for powerful worship, inspiring messages, and community fellowship</p>
+    
+    <div class="services-container">
+        <!-- Main Sunday Service -->
+        <div class="service-card featured">
+            <div class="service-header">
+                <h3 class="service-name">Sunday Service</h3>
+                <div class="service-time">9:00 AM - 12:00 PM</div>
+            </div>
+            
+            <div class="service-details">
+                <div class="service-item">
+                    <div class="service-icon">🎵</div>
+                    <div class="service-text">
+                        <h4>Praise & Worship</h4>
+                        <p>Anointed music and heartfelt worship</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">📖</div>
+                    <div class="service-text">
+                        <h4>Biblical Teaching</h4>
+                        <p>Practical, life-changing messages from Scripture</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">🙏</div>
+                    <div class="service-text">
+                        <h4>Prayer Ministry</h4>
+                        <p>Personal prayer and spiritual guidance</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">👨‍👩‍👧‍👦</div>
+                    <div class="service-text">
+                        <h4>Children's Ministry</h4>
+                        <p>Age-appropriate Bible lessons and activities</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="service-reminder-btn" data-service="sunday">
+                <span>📅 Set Reminder</span>
+            </button>
+        </div>
+        
+        <!-- Midweek Services Grid -->
+        <div class="services-grid">
+            <!-- Wednesday Service -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3 class="service-name">Wednesday Bible Study</h3>
+                    <div class="service-time">7:00 PM - 8:30 PM</div>
+                </div>
+                
+                <div class="service-description">
+                    <p>Deep dive into God's Word with interactive teaching and discussion</p>
+                </div>
+                
+                <div class="service-tags">
+                    <span class="service-tag">In-depth Study</span>
+                    <span class="service-tag">Q&A Session</span>
+                </div>
+                
+                <button class="service-reminder-btn" data-service="wednesday">
+                    <span>📅 Set Reminder</span>
+                </button>
+            </div>
+            
+            <!-- Friday Prayer -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3 class="service-name">Friday Night Prayer</h3>
+                    <div class="service-time">8:00 PM - 10:00 PM</div>
+                </div>
+                
+                <div class="service-description">
+                    <p>Corporate prayer and intercession for breakthroughs and miracles</p>
+                </div>
+                
+                <div class="service-tags">
+                    <span class="service-tag">Intercession</span>
+                    <span class="service-tag">Worship</span>
+                </div>
+                
+                <button class="service-reminder-btn" data-service="friday">
+                    <span>📅 Set Reminder</span>
+                </button>
+            </div>
+            
+            <!-- Youth Service -->
+            <div class="service-card">
+                <div class="service-header">
+                    <h3 class="service-name">Youth Gathering</h3>
+                    <div class="service-time">Saturday 5:00 PM</div>
+                </div>
+                
+                <div class="service-description">
+                    <p>Dynamic worship and relevant teaching for ages 13-25</p>
+                </div>
+                
+                <div class="service-tags">
+                    <span class="service-tag">Ages 13-25</span>
+                    <span class="service-tag">Modern Worship</span>
+                </div>
+                
+                <button class="service-reminder-btn" data-service="youth">
+                    <span>📅 Set Reminder</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Services Section */
+.services-section {
+    position: absolute;
+    top: 500vh;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    z-index: 3;
+    padding: 80px 20px;
+    overflow: hidden;
+    transition: opacity 1s ease;
+}
+
+.services-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(50, 205, 50, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 140, 0, 0.05) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.services-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    color: var(--lime-green);
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.services-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.services-subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 60px;
+    opacity: 0.8;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+}
+
+.services-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Featured Service Card */
+.service-card.featured {
+    background: linear-gradient(135deg, rgba(50, 205, 50, 0.1), rgba(255, 140, 0, 0.1));
+    border: 2px solid var(--lime-green);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card.featured.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card.featured::before {
+    content: '⭐ MAIN SERVICE';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--orange);
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.service-header {
+    margin-bottom: 30px;
+}
+
+.service-name {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.service-time {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: var(--lime-green);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.service-time::before {
+    content: '⏰';
+    font-size: 1.2rem;
+}
+
+.service-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.service-icon {
+    font-size: 2rem;
+    min-width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 140, 0, 0.2);
+    border-radius: 12px;
+}
+
+.service-text h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+.service-text p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.4;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card:nth-child(1) { transition-delay: 0.1s; }
+.service-card:nth-child(2) { transition-delay: 0.2s; }
+.service-card:nth-child(3) { transition-delay: 0.3s; }
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--lime-green);
+    box-shadow: 0 20px 40px rgba(50, 205, 50, 0.1);
+}
+
+.service-description {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.service-tag {
+    background: rgba(255, 140, 0, 0.2);
+    color: var(--orange);
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.service-reminder-btn {
+    width: 100%;
+    padding: 16px;
+    background: transparent;
+    border: 2px solid var(--lime-green);
+    border-radius: 50px;
+    color: var(--lime-green);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.service-reminder-btn:hover {
+    background: var(--lime-green);
+    color: #000;
+    transform: scale(1.05);
+}
+
+.service-reminder-btn span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Reminder Modal */
+.reminder-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.reminder-modal.active {
+    display: flex;
+}
+
+.reminder-content {
+    background: #000;
+    border: 2px solid var(--lime-green);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reminder-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--orange);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+}
+
+.reminder-close:hover {
+    background: rgba(255, 140, 0, 0.2);
+}
+
+.reminder-title {
+    font-size: 2rem;
+    color: var(--lime-green);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.reminder-text {
+    color: var(--white);
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.reminder-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.reminder-option {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+}
+
+.reminder-option:hover {
+    background: rgba(255, 140, 0, 0.2);
+    border-color: var(--orange);
+}
+
+.reminder-option-icon {
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .service-details {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 60px 15px;
+    }
+    
+    .service-card.featured {
+        padding: 30px 20px;
+    }
+    
+    .service-details {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .service-card {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section {
+        padding: 40px 10px;
+    }
+    
+    .service-card.featured::before {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    
+    .service-item {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .reminder-content {
+        padding: 30px 20px;
+    }
+}
+</style>
+
+<script>
+// Services section functionality
+(function() {
+    'use strict';
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Wait for services section to be loaded
+        setTimeout(initServices, 100);
+    });
+    
+    function initServices() {
+        // Elements
+        const reminderButtons = document.querySelectorAll('.service-reminder-btn');
+        const modal = document.querySelector('.reminder-modal');
+        const closeModalBtn = document.querySelector('.reminder-close');
+        const reminderOptions = document.querySelectorAll('.reminder-option');
+        const servicesTitle = document.querySelector('.services-title');
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        // Service data
+        const serviceData = {
+            'sunday': {
+                title: 'Sunday Service Reminder',
+                text: 'Set a reminder for our main Sunday service at 9:00 AM',
+                service: 'Sunday Service',
+                time: '9:00 AM - 12:00 PM'
+            },
+            'wednesday': {
+                title: 'Bible Study Reminder',
+                text: 'Set a reminder for Wednesday Bible Study at 7:00 PM',
+                service: 'Wednesday Bible Study',
+                time: '7:00 PM - 8:30 PM'
+            },
+            'friday': {
+                title: 'Friday Prayer Reminder',
+                text: 'Set a reminder for Friday Night Prayer at 8:00 PM',
+                service: 'Friday Night Prayer',
+                time: '8:00 PM - 10:00 PM'
+            },
+            'youth': {
+                title: 'Youth Gathering Reminder',
+                text: 'Set a reminder for Youth Gathering at 5:00 PM Saturday',
+                service: 'Youth Gathering',
+                time: 'Saturday 5:00 PM'
+            }
+        };
+        
+        // State
+        let currentService = '';
+        let servicesShown = false;
+        
+        // Initialize
+        setupServices();
+        
+        function setupServices() {
+            // Add event listeners
+            addEventListeners();
+            
+            // Set up scroll detection for animation
+            setupScrollDetection();
+        }
+        
+        function addEventListeners() {
+            // Reminder buttons
+            reminderButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const service = this.getAttribute('data-service');
+                    openReminderModal(service);
+                });
+            });
+            
+            // Close modal
+            closeModalBtn.addEventListener('click', closeReminderModal);
+            
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeReminderModal();
+                }
+            });
+            
+            // Reminder options
+            reminderOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const optionType = this.getAttribute('data-option');
+                    handleReminderOption(optionType);
+                });
+            });
+            
+            // Escape key to close modal
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeReminderModal();
+                }
+            });
+        }
+        
+        function openReminderModal(service) {
+            if (!serviceData[service]) return;
+            
+            currentService = service;
+            
+            // Update modal content
+            const data = serviceData[service];
+            document.querySelector('.reminder-title').textContent = data.title;
+            document.querySelector('.reminder-text').textContent = data.text;
+            
+            // Show modal
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeReminderModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            currentService = '';
+        }
+        
+        function handleReminderOption(optionType) {
+            if (!currentService) return;
+            
+            const data = serviceData[currentService];
+            
+            switch(optionType) {
+                case 'google':
+                    // Create Google Calendar link
+                    const startTime = new Date();
+                    startTime.setHours(9, 0, 0); // Sunday service time
+                    
+                    // Adjust for other services
+                    if (currentService === 'wednesday') {
+                        startTime.setHours(19, 0, 0);
+                    } else if (currentService === 'friday') {
+                        startTime.setHours(20, 0, 0);
+                    } else if (currentService === 'youth') {
+                        startTime.setHours(17, 0, 0);
+                    }
+                    
+                    const endTime = new Date(startTime);
+                    endTime.setHours(startTime.getHours() + 3); // 3 hour duration
+                    
+                    const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(data.service)}&details=${encodeURIComponent(`Join us for ${data.service} at TCI`)}&location=${encodeURIComponent('Triumphant Church International')}&dates=${startTime.toISOString().replace(/[-:]/g, '').split('.')[0]}Z/${endTime.toISOString().replace(/[-:]/g, '').split('.')[0]}Z`;
+                    
+                    window.open(googleCalendarUrl, '_blank');
+                    break;
+                    
+                case 'ical':
+                    // Simple iCal reminder - would need server-side generation in production
+                    alert(`To add ${data.service} to your calendar:\n\n1. Open your calendar app\n2. Create new event\n3. Set title: "${data.service}"\n4. Set time: ${data.time}\n5. Save`);
+                    break;
+                    
+                case 'notification':
+                    // Request notification permission
+                    if ('Notification' in window) {
+                        if (Notification.permission === 'granted') {
+                            scheduleNotification(data);
+                        } else if (Notification.permission !== 'denied') {
+                            Notification.requestPermission().then(permission => {
+                                if (permission === 'granted') {
+                                    scheduleNotification(data);
+                                }
+                            });
+                        }
+                    } else {
+                        alert('Notifications not supported in this browser');
+                    }
+                    break;
+                    
+                case 'email':
+                    // Email reminder
+                    const subject = `Reminder: ${data.service}`;
+                    const body = `Reminder for ${data.service} at ${data.time}\n\nLocation: Triumphant Church International`;
+                    const mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    
+                    window.location.href = mailtoLink;
+                    break;
+            }
+            
+            closeReminderModal();
+        }
+        
+        function scheduleNotification(data) {
+            // Calculate time until next occurrence
+            const now = new Date();
+            let nextTime = new Date();
+            
+            // Set next occurrence based on service
+            if (currentService === 'sunday') {
+                // Next Sunday
+                const daysUntilSunday = (7 - now.getDay()) % 7 || 7;
+                nextTime.setDate(now.getDate() + daysUntilSunday);
+                nextTime.setHours(9, 0, 0, 0);
+            } else if (currentService === 'wednesday') {
+                // Next Wednesday
+                const daysUntilWednesday = (3 - now.getDay() + 7) % 7 || 7;
+                nextTime.setDate(now.getDate() + daysUntilWednesday);
+                nextTime.setHours(19, 0, 0, 0);
+            } else if (currentService === 'friday') {
+                // Next Friday
+                const daysUntilFriday = (5 - now.getDay() + 7) % 7 || 7;
+                nextTime.setDate(now.getDate() + daysUntilFriday);
+                nextTime.setHours(20, 0, 0, 0);
+            } else if (currentService === 'youth') {
+                // Next Saturday
+                const daysUntilSaturday = (6 - now.getDay() + 7) % 7 || 7;
+                nextTime.setDate(now.getDate() + daysUntilSaturday);
+                nextTime.setHours(17, 0, 0, 0);
+            }
+            
+            const timeUntil = nextTime.getTime() - now.getTime();
+            
+            // Schedule notification 1 hour before
+            setTimeout(() => {
+                new Notification(data.service, {
+                    body: `Starts in 1 hour at ${data.time}`,
+                    icon: 'https://images.unsplash.com/photo-1567593810070-7a5c0925344e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80'
+                });
+            }, timeUntil - 3600000); // 1 hour before
+        }
+        
+        function setupScrollDetection() {
+            let ticking = false;
+            
+            function checkScroll() {
+                const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+                const heroHeight = window.innerHeight;
+                const servicesProgress = Math.min(Math.max((scrollY - heroHeight * 4.5) / (heroHeight * 0.5), 0), 1);
+                
+                // Show services section
+                if (servicesProgress > 0.2 && !servicesShown) {
+                    servicesShown = true;
+                    servicesTitle.classList.add('visible');
+                    serviceCards.forEach(card => {
+                        card.classList.add('visible');
+                    });
+                } else if (servicesProgress <= 0.2 && servicesShown) {
+                    servicesShown = false;
+                    servicesTitle.classList.remove('visible');
+                    serviceCards.forEach(card => {
+                        card.classList.remove('visible');
+                    });
+                }
+                
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(checkScroll);
+                    ticking = true;
+                }
+            });
+            
+            // Initial check
+            checkScroll();
+        }
+    }
+})();
+</script>

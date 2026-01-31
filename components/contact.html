@@ -1,0 +1,1564 @@
+<section class="contact-section">
+    <div class="contact-bg-pattern"></div>
+    
+    <div class="contact-header">
+        <h2 class="contact-title">Contact Us</h2>
+        <p class="contact-subtitle">We'd love to connect with you. Visit us, call us, or send us a message</p>
+    </div>
+    
+    <div class="contact-container">
+        <!-- Contact Info Cards -->
+        <div class="contact-info-cards">
+            <!-- Location Card -->
+            <div class="contact-card">
+                <div class="contact-card-icon">📍</div>
+                <h3 class="contact-card-title">Visit Us</h3>
+                <div class="contact-card-content">
+                    <p class="contact-address">
+                        Triumphant Church International<br>
+                        QQVW+C26, Northern Bypass Rd<br>
+                        Nairobi, Kenya
+                    </p>
+                    <div class="contact-actions">
+                        <button class="contact-action-btn" id="getDirections">
+                            <span>🗺️ Get Directions</span>
+                        </button>
+                        <button class="contact-action-btn" id="viewMap">
+                            <span>🌍 Open in Google Maps</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Details Card -->
+            <div class="contact-card">
+                <div class="contact-card-icon">📞</div>
+                <h3 class="contact-card-title">Contact Details</h3>
+                <div class="contact-card-content">
+                    <div class="contact-detail">
+                        <span class="detail-icon">📧</span>
+                        <div class="detail-info">
+                            <span class="detail-label">Email</span>
+                            <a href="mailto:info@triumphantchurch.org" class="detail-value">
+                                info@triumphantchurch.org
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <span class="detail-icon">📱</span>
+                        <div class="detail-info">
+                            <span class="detail-label">Phone</span>
+                            <a href="tel:+254712345678" class="detail-value">
+                                +254 712 345 678
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <span class="detail-icon">⏰</span>
+                        <div class="detail-info">
+                            <span class="detail-label">Service Hours</span>
+                            <span class="detail-value">
+                                Sunday: 9AM - 12PM<br>
+                                Wednesday: 7PM - 8:30PM<br>
+                                Friday: 8PM - 10PM
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Media Card -->
+            <div class="contact-card">
+                <div class="contact-card-icon">🌐</div>
+                <h3 class="contact-card-title">Connect Online</h3>
+                <div class="contact-card-content">
+                    <p class="social-description">
+                        Follow us on social media for updates, live streams, and inspiration
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook" target="_blank" title="Facebook">
+                            <span class="social-icon">📘</span>
+                            <span class="social-text">Facebook</span>
+                        </a>
+                        
+                        <a href="#" class="social-link youtube" target="_blank" title="YouTube">
+                            <span class="social-icon">📺</span>
+                            <span class="social-text">YouTube</span>
+                        </a>
+                        
+                        <a href="#" class="social-link instagram" target="_blank" title="Instagram">
+                            <span class="social-icon">📸</span>
+                            <span class="social-text">Instagram</span>
+                        </a>
+                        
+                        <a href="#" class="social-link whatsapp" target="_blank" title="WhatsApp">
+                            <span class="social-icon">💬</span>
+                            <span class="social-text">WhatsApp Group</span>
+                        </a>
+                    </div>
+                    
+                    <div class="live-stream">
+                        <button class="live-stream-btn" id="watchLive">
+                            <span class="live-icon">▶️</span>
+                            <span class="live-text">Watch Live Service</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Map and Form Container -->
+        <div class="map-form-container">
+            <!-- Interactive Map -->
+            <div class="map-container">
+                <div class="map-header">
+                    <h3 class="map-title">Our Location</h3>
+                    <div class="map-controls">
+                        <button class="map-control-btn" id="zoomIn">+</button>
+                        <button class="map-control-btn" id="zoomOut">-</button>
+                        <button class="map-control-btn" id="locateMe">📍</button>
+                        <button class="map-control-btn" id="resetMap">↺</button>
+                    </div>
+                </div>
+                
+                <div class="map-wrapper">
+                    <!-- Interactive Map Container -->
+                    <div id="interactiveMap" class="interactive-map"></div>
+                    
+                    <!-- Loading indicator -->
+                    <div class="map-loading" id="mapLoading">
+                        <div class="loading-spinner"></div>
+                        <span>Loading map...</span>
+                    </div>
+                </div>
+                
+                <div class="map-details">
+                    <div class="map-detail">
+                        <span class="map-detail-icon">🚗</span>
+                        <span class="map-detail-text">Ample parking available</span>
+                    </div>
+                    <div class="map-detail">
+                        <span class="map-detail-icon">♿</span>
+                        <span class="map-detail-text">Wheelchair accessible</span>
+                    </div>
+                    <div class="map-detail">
+                        <span class="map-detail-icon">🚌</span>
+                        <span class="map-detail-text">Near Northern Bypass Rd</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h3 class="form-title">Send Us a Message</h3>
+                <p class="form-subtitle">We'll get back to you within 24 hours</p>
+                
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name *</label>
+                        <input type="text" id="name" name="name" required class="form-input" placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" id="email" name="email" required class="form-input" placeholder="your@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="+254 712 345 678">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject *</label>
+                        <select id="subject" name="subject" required class="form-select">
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="prayer">Prayer Request</option>
+                            <option value="visitor">First Time Visitor</option>
+                            <option value="ministry">Ministry Inquiry</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message *</label>
+                        <textarea id="message" name="message" required class="form-textarea" rows="5" placeholder="Your message here..."></textarea>
+                    </div>
+                    
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="newsletter" name="newsletter" class="checkbox-input">
+                        <label for="newsletter" class="checkbox-label">
+                            Subscribe to our newsletter for updates and events
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-icon">✉️</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="contact-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-text">TCI</span>
+                <span class="logo-subtext">Triumphant Church International</span>
+            </div>
+            
+            <div class="footer-quote">
+                "See beyond what is, envision what could be."
+            </div>
+            
+            <div class="footer-links">
+                <a href="#home" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">About</a>
+                <a href="#services" class="footer-link">Services</a>
+                <a href="#events" class="footer-link">Events</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div>
+            
+            <div class="footer-copyright">
+                © 2024 Triumphant Church International. All rights reserved.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add Leaflet CSS and JavaScript -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+<style>
+/* Contact Section */
+.contact-section {
+    position: absolute;
+    top: 700vh;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    z-index: 3;
+    padding: 80px 20px 0;
+    overflow: hidden;
+    transition: opacity 1s ease;
+}
+
+.contact-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(50, 205, 50, 0.05) 0%, transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(255, 140, 0, 0.05) 0%, transparent 60%);
+    z-index: -1;
+}
+
+.contact-header {
+    max-width: 1400px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.contact-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    color: var(--lime-green);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease 0.3s;
+}
+
+.contact-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--white);
+    opacity: 0.8;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Contact Info Cards */
+.contact-info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.contact-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-card:nth-child(1) { transition-delay: 0.1s; }
+.contact-card:nth-child(2) { transition-delay: 0.2s; }
+.contact-card:nth-child(3) { transition-delay: 0.3s; }
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--lime-green);
+    box-shadow: 0 20px 40px rgba(50, 205, 50, 0.1);
+}
+
+.contact-card-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.contact-card-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 25px;
+}
+
+.contact-address {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-action-btn {
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    color: var(--white);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-action-btn:hover {
+    background: var(--lime-green);
+    color: #000;
+    border-color: var(--lime-green);
+}
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-icon {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    min-width: 24px;
+}
+
+.detail-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    line-height: 1.4;
+}
+
+.detail-value:hover {
+    color: var(--lime-green);
+}
+
+.social-description {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateX(5px);
+    border-color: var(--orange);
+    background: rgba(255, 140, 0, 0.1);
+}
+
+.social-icon {
+    font-size: 1.5rem;
+}
+
+.social-text {
+    font-weight: 600;
+}
+
+.live-stream-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--orange), #ff4500);
+    border: none;
+    border-radius: 50px;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.live-stream-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+}
+
+/* Map and Form Container */
+.map-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+@media (max-width: 1200px) {
+    .map-form-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.map-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--white);
+    margin: 0;
+}
+
+.map-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.map-control-btn {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-control-btn:hover {
+    background: var(--lime-green);
+    color: #000;
+    border-color: var(--lime-green);
+}
+
+.map-wrapper {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+/* Interactive Map Styles */
+.interactive-map {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Custom Leaflet map styles */
+.leaflet-container {
+    background: #1a1a1a !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.leaflet-tile {
+    filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+.leaflet-control-attribution {
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 10px !important;
+    padding: 2px 5px !important;
+}
+
+.leaflet-control-attribution a {
+    color: var(--lime-green) !important;
+}
+
+.leaflet-control-zoom a {
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: var(--white) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.leaflet-control-zoom a:hover {
+    background: var(--lime-green) !important;
+    color: #000 !important;
+}
+
+/* Custom Church Marker */
+.church-marker {
+    background: none;
+    border: none;
+}
+
+.church-marker .marker-icon {
+    width: 40px !important;
+    height: 40px !important;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.8);
+    animation: pulse-marker 2s infinite;
+}
+
+@keyframes pulse-marker {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 140, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(255, 140, 0, 0);
+    }
+}
+
+.church-marker .marker-icon::before {
+    content: "⛪";
+    font-size: 20px;
+    color: #000;
+}
+
+/* Marker Popup */
+.leaflet-popup-content-wrapper {
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--lime-green);
+    border-radius: 12px !important;
+    color: var(--white) !important;
+}
+
+.leaflet-popup-content {
+    color: var(--white) !important;
+    font-family: 'Montserrat', sans-serif;
+    margin: 15px !important;
+}
+
+.leaflet-popup-tip {
+    background: var(--lime-green) !important;
+}
+
+.church-popup h3 {
+    color: var(--lime-green);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.church-popup p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* Map Loading */
+.map-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.map-loading span {
+    color: var(--lime-green);
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(50, 205, 50, 0.3);
+    border-top: 4px solid var(--lime-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.map-details {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.map-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.map-detail-icon {
+    font-size: 1.2rem;
+}
+
+/* Contact Form */
+.contact-form-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.form-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.form-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-label {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: var(--white);
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--lime-green);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 16px;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.checkbox-input {
+    margin-top: 5px;
+    accent-color: var(--lime-green);
+}
+
+.checkbox-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.submit-btn {
+    padding: 18px;
+    background: var(--lime-green);
+    border: none;
+    border-radius: 50px;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(50, 205, 50, 0.3);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+.contact-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 60px 0 40px;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-logo {
+    margin-bottom: 30px;
+}
+
+.logo-text {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--lime-green);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.logo-subtext {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-quote {
+    font-size: 1.5rem;
+    color: var(--orange);
+    font-style: italic;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--lime-green);
+}
+
+.footer-copyright {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+}
+
+/* Success Message */
+.success-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    border: 2px solid var(--lime-green);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    z-index: 1001;
+    animation: modalSlideIn 0.3s ease;
+    max-width: 500px;
+    width: 90%;
+}
+
+.success-message.active {
+    display: block;
+}
+
+.success-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--lime-green);
+}
+
+.success-title {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+
+.success-text {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.success-close {
+    padding: 12px 30px;
+    background: var(--orange);
+    border: none;
+    border-radius: 50px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.success-close:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-info-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 15px 0;
+    }
+    
+    .contact-info-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form-container {
+        padding: 30px 25px;
+    }
+    
+    .map-header {
+        padding: 20px 25px;
+    }
+    
+    .map-details {
+        padding: 20px 25px;
+    }
+    
+    .footer-links {
+        gap: 20px;
+    }
+    
+    .map-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 40px 10px 0;
+    }
+    
+    .contact-card {
+        padding: 25px 20px;
+    }
+    
+    .contact-actions {
+        flex-direction: column;
+    }
+    
+    .contact-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .social-links {
+        gap: 10px;
+    }
+    
+    .social-link {
+        padding: 12px 15px;
+    }
+    
+    .contact-form-container {
+        padding: 25px 20px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+</style>
+
+<script>
+// Contact section functionality
+(function() {
+    'use strict';
+    
+    // Wait for contact section to be loaded
+    const checkElement = setInterval(() => {
+        const contactSection = document.querySelector('.contact-section');
+        if (contactSection) {
+            clearInterval(checkElement);
+            initContact();
+        }
+    }, 100);
+    
+    function initContact() {
+        // Elements
+        const contactTitle = document.querySelector('.contact-title');
+        const contactCards = document.querySelectorAll('.contact-card');
+        const getDirectionsBtn = document.getElementById('getDirections');
+        const viewMapBtn = document.getElementById('viewMap');
+        const watchLiveBtn = document.getElementById('watchLive');
+        const contactForm = document.getElementById('contactForm');
+        const zoomInBtn = document.getElementById('zoomIn');
+        const zoomOutBtn = document.getElementById('zoomOut');
+        const locateMeBtn = document.getElementById('locateMe');
+        const resetMapBtn = document.getElementById('resetMap');
+        const mapLoading = document.getElementById('mapLoading');
+        
+        // Church location (QQVW+C26, Northern Bypass Rd, Nairobi)
+        const churchLocation = {
+            lat: -1.3186,  // Approximate coordinates for Northern Bypass Rd, Nairobi
+            lng: 36.9278,
+            address: 'QQVW+C26, Northern Bypass Rd, Nairobi, Kenya'
+        };
+        
+        // State
+        let contactShown = false;
+        let map = null;
+        let marker = null;
+        let userLocationMarker = null;
+        
+        // Initialize
+        setupContact();
+        
+        function setupContact() {
+            // Add event listeners
+            addEventListeners();
+            
+            // Set up scroll detection for animation
+            setupScrollDetection();
+            
+            // Initialize map
+            initializeMap();
+        }
+        
+        function addEventListeners() {
+            // Get Directions button
+            getDirectionsBtn.addEventListener('click', getDirections);
+            
+            // View on Map button
+            viewMapBtn.addEventListener('click', viewOnMap);
+            
+            // Watch Live button
+            watchLiveBtn.addEventListener('click', watchLive);
+            
+            // Map controls
+            zoomInBtn.addEventListener('click', () => map.zoomIn());
+            zoomOutBtn.addEventListener('click', () => map.zoomOut());
+            locateMeBtn.addEventListener('click', locateUser);
+            resetMapBtn.addEventListener('click', resetMapView);
+            
+            // Contact form submission
+            contactForm.addEventListener('submit', handleFormSubmit);
+        }
+        
+        function initializeMap() {
+            // Show loading
+            if (mapLoading) {
+                mapLoading.style.display = 'flex';
+            }
+            
+            // Initialize the map
+            setTimeout(() => {
+                try {
+                    // Create map instance
+                    map = L.map('interactiveMap', {
+                        center: [churchLocation.lat, churchLocation.lng],
+                        zoom: 15,
+                        zoomControl: false, // We'll use custom controls
+                        attributionControl: true,
+                        dragging: true,
+                        scrollWheelZoom: true,
+                        doubleClickZoom: true,
+                        boxZoom: true,
+                        keyboard: true,
+                        tap: true
+                    });
+                    
+                    // Add tile layer (OpenStreetMap)
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                        maxZoom: 19,
+                        minZoom: 3
+                    }).addTo(map);
+                    
+                    // Create custom icon for church marker
+                    const churchIcon = L.divIcon({
+                        className: 'church-marker',
+                        html: '<div class="marker-icon"></div>',
+                        iconSize: [40, 40],
+                        iconAnchor: [20, 40],
+                        popupAnchor: [0, -40]
+                    });
+                    
+                    // Add church marker
+                    marker = L.marker([churchLocation.lat, churchLocation.lng], {
+                        icon: churchIcon,
+                        title: 'Triumphant Church International'
+                    }).addTo(map);
+                    
+                    // Add popup with church info
+                    marker.bindPopup(`
+                        <div class="church-popup">
+                            <h3>🏛️ Triumphant Church International</h3>
+                            <p>📍 ${churchLocation.address}</p>
+                            <p>📅 Sunday Services: 9:00 AM</p>
+                            <p>📞 +254 712 345 678</p>
+                            <button onclick="getDirections()" style="
+                                background: var(--lime-green);
+                                color: #000;
+                                border: none;
+                                padding: 8px 16px;
+                                border-radius: 20px;
+                                cursor: pointer;
+                                margin-top: 10px;
+                                font-weight: bold;
+                                width: 100%;
+                            ">
+                                🗺️ Get Directions
+                            </button>
+                        </div>
+                    `);
+                    
+                    // Add click event to marker
+                    marker.on('click', function() {
+                        this.openPopup();
+                    });
+                    
+                    // Open popup by default
+                    marker.openPopup();
+                    
+                    // Add custom controls
+                    L.control.zoom({
+                        position: 'bottomright'
+                    }).addTo(map);
+                    
+                    // Hide loading
+                    if (mapLoading) {
+                        mapLoading.style.display = 'none';
+                    }
+                    
+                    console.log('Map initialized successfully');
+                    
+                } catch (error) {
+                    console.error('Error initializing map:', error);
+                    if (mapLoading) {
+                        mapLoading.innerHTML = `
+                            <div style="text-align: center;">
+                                <div style="color: var(--orange); font-size: 2rem;">⚠️</div>
+                                <span style="color: var(--white); margin-top: 10px;">Map failed to load. Please check your internet connection.</span>
+                                <button onclick="location.reload()" style="
+                                    background: var(--orange);
+                                    color: #000;
+                                    border: none;
+                                    padding: 10px 20px;
+                                    border-radius: 20px;
+                                    cursor: pointer;
+                                    margin-top: 15px;
+                                    font-weight: bold;
+                                ">
+                                    Retry
+                                </button>
+                            </div>
+                        `;
+                    }
+                }
+            }, 500);
+        }
+        
+        function getDirections() {
+            // Create Google Maps directions URL
+            const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(churchLocation.address)}`;
+            
+            // Try to detect if user is on mobile
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // On mobile, open in Google Maps app if available
+                const mapsAppUrl = `comgooglemaps://?daddr=${churchLocation.lat},${churchLocation.lng}`;
+                
+                // Try to open in Google Maps app
+                window.location.href = mapsAppUrl;
+                
+                // Fallback to web if app doesn't open
+                setTimeout(() => {
+                    if (document.hasFocus()) {
+                        window.open(directionsUrl, '_blank');
+                    }
+                }, 500);
+            } else {
+                // On desktop, open in new tab
+                window.open(directionsUrl, '_blank');
+            }
+        }
+        
+        function viewOnMap() {
+            // Open Google Maps in new tab with church location
+            const mapsUrl = `https://www.google.com/maps?q=${churchLocation.lat},${churchLocation.lng}`;
+            window.open(mapsUrl, '_blank');
+        }
+        
+        function watchLive() {
+            // In a real application, this would open the live stream
+            alert('Live streaming will be available during service hours. Check back on Sunday at 9:00 AM!');
+            
+            // For demo purposes, we could redirect to YouTube
+            // window.open('https://youtube.com/c/YourChannel', '_blank');
+        }
+        
+        function locateUser() {
+            if (navigator.geolocation) {
+                // Show loading on button
+                const originalText = locateMeBtn.innerHTML;
+                locateMeBtn.innerHTML = '📍<br><small>Locating...</small>';
+                locateMeBtn.disabled = true;
+                
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const userLat = position.coords.latitude;
+                        const userLng = position.coords.longitude;
+                        
+                        // Remove previous user marker if exists
+                        if (userLocationMarker) {
+                            map.removeLayer(userLocationMarker);
+                        }
+                        
+                        // Create custom icon for user location
+                        const userIcon = L.divIcon({
+                            className: 'user-marker',
+                            html: '<div style="background: var(--lime-green); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(50, 205, 50, 0.8);"><span style="color: #000; font-size: 16px;">📍</span></div>',
+                            iconSize: [30, 30],
+                            iconAnchor: [15, 30]
+                        });
+                        
+                        // Add user location marker
+                        userLocationMarker = L.marker([userLat, userLng], {
+                            icon: userIcon,
+                            title: 'Your Location'
+                        }).addTo(map);
+                        
+                        // Add popup
+                        userLocationMarker.bindPopup(`
+                            <div style="text-align: center;">
+                                <h4 style="color: var(--lime-green); margin: 0 0 10px 0;">📍 Your Location</h4>
+                                <p style="margin: 0; color: rgba(255, 255, 255, 0.8);">You are here</p>
+                            </div>
+                        `);
+                        
+                        // Calculate distance
+                        const distance = calculateDistance(
+                            userLat, userLng,
+                            churchLocation.lat, churchLocation.lng
+                        );
+                        
+                        // Show route on map
+                        showRoute(userLat, userLng, churchLocation.lat, churchLocation.lng);
+                        
+                        // Update button
+                        locateMeBtn.innerHTML = originalText;
+                        locateMeBtn.disabled = false;
+                        
+                        // Show distance info
+                        alert(`You are ${distance.toFixed(1)} km from the church. Route has been shown on the map.`);
+                        
+                    },
+                    (error) => {
+                        console.error('Geolocation error:', error);
+                        alert('Unable to retrieve your location. Please enable location services in your browser settings.');
+                        
+                        // Reset button
+                        locateMeBtn.innerHTML = originalText;
+                        locateMeBtn.disabled = false;
+                    },
+                    {
+                        enableHighAccuracy: true,
+                        timeout: 10000,
+                        maximumAge: 0
+                    }
+                );
+            } else {
+                alert('Geolocation is not supported by your browser. Please use a modern browser.');
+            }
+        }
+        
+        function showRoute(startLat, startLng, endLat, endLng) {
+            // Use OSRM API for routing (free service)
+            const routeUrl = `https://router.project-osrm.org/route/v1/driving/${startLng},${startLat};${endLng},${endLat}?overview=full&geometries=geojson`;
+            
+            fetch(routeUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.routes && data.routes.length > 0) {
+                        const route = data.routes[0];
+                        const routeCoordinates = route.geometry.coordinates.map(coord => [coord[1], coord[0]]);
+                        
+                        // Create a polyline for the route
+                        const routeLine = L.polyline(routeCoordinates, {
+                            color: 'var(--lime-green)',
+                            weight: 4,
+                            opacity: 0.8,
+                            dashArray: '10, 10',
+                            lineCap: 'round'
+                        }).addTo(map);
+                        
+                        // Fit map to show both points and route
+                        const bounds = L.latLngBounds(routeCoordinates);
+                        bounds.extend([startLat, startLng]);
+                        bounds.extend([endLat, endLng]);
+                        map.fitBounds(bounds, { padding: [50, 50] });
+                        
+                        // Add route info
+                        const distanceKm = (route.distance / 1000).toFixed(1);
+                        const durationMins = Math.round(route.duration / 60);
+                        
+                        L.popup()
+                            .setLatLng([startLat, startLng])
+                            .setContent(`
+                                <div style="text-align: center;">
+                                    <h4 style="color: var(--lime-green); margin: 0 0 10px 0;">🚗 Route to Church</h4>
+                                    <p style="margin: 5px 0; color: rgba(255, 255, 255, 0.8);">
+                                        <strong>Distance:</strong> ${distanceKm} km
+                                    </p>
+                                    <p style="margin: 5px 0; color: rgba(255, 255, 255, 0.8);">
+                                        <strong>Estimated Time:</strong> ${durationMins} minutes
+                                    </p>
+                                </div>
+                            `)
+                            .openOn(map);
+                    }
+                })
+                .catch(error => {
+                    console.error('Routing error:', error);
+                    // Fallback: just show a straight line
+                    const straightLine = L.polyline([
+                        [startLat, startLng],
+                        [endLat, endLng]
+                    ], {
+                        color: 'var(--lime-green)',
+                        weight: 3,
+                        opacity: 0.6,
+                        dashArray: '5, 5'
+                    }).addTo(map);
+                });
+        }
+        
+        function resetMapView() {
+            if (map) {
+                // Remove user location marker
+                if (userLocationMarker) {
+                    map.removeLayer(userLocationMarker);
+                    userLocationMarker = null;
+                }
+                
+                // Remove any route lines
+                map.eachLayer((layer) => {
+                    if (layer instanceof L.Polyline) {
+                        map.removeLayer(layer);
+                    }
+                });
+                
+                // Reset view to church location
+                map.setView([churchLocation.lat, churchLocation.lng], 15);
+                
+                // Open church popup
+                if (marker) {
+                    marker.openPopup();
+                }
+            }
+        }
+        
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            // Haversine formula
+            const R = 6371; // Earth's radius in km
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a = 
+                Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon/2) * Math.sin(dLon/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+            return R * c;
+        }
+        
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.name || !data.email || !data.subject || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<span>Sending...</span>';
+            submitBtn.disabled = true;
+            
+            // In a real application, you would send this to your server
+            // For demo purposes, we'll simulate an API call
+            setTimeout(() => {
+                // Create success message
+                const successMessage = document.createElement('div');
+                successMessage.className = 'success-message';
+                successMessage.innerHTML = `
+                    <div class="success-icon">✅</div>
+                    <h3 class="success-title">Message Sent!</h3>
+                    <p class="success-text">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                    <button class="success-close">Close</button>
+                `;
+                
+                // Add close event
+                const closeBtn = successMessage.querySelector('.success-close');
+                closeBtn.addEventListener('click', () => {
+                    successMessage.remove();
+                    document.body.style.overflow = '';
+                });
+                
+                // Close when clicking outside
+                successMessage.addEventListener('click', (e) => {
+                    if (e.target === successMessage) {
+                        successMessage.remove();
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Escape key to close
+                document.addEventListener('keydown', function closeOnEscape(e) {
+                    if (e.key === 'Escape') {
+                        successMessage.remove();
+                        document.body.style.overflow = '';
+                        document.removeEventListener('keydown', closeOnEscape);
+                    }
+                });
+                
+                document.body.appendChild(successMessage);
+                document.body.style.overflow = 'hidden';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Log data (in production, this would go to your server)
+                console.log('Form submitted:', data);
+                
+                // If newsletter is checked, add to newsletter list
+                if (data.newsletter) {
+                    console.log('Added to newsletter:', data.email);
+                }
+                
+            }, 1500);
+        }
+        
+        function setupScrollDetection() {
+            let ticking = false;
+            
+            function checkScroll() {
+                const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+                const heroHeight = window.innerHeight;
+                const contactProgress = Math.min(Math.max((scrollY - heroHeight * 6.5) / (heroHeight * 0.5), 0), 1);
+                
+                // Show contact section
+                if (contactProgress > 0.2 && !contactShown) {
+                    contactShown = true;
+                    contactTitle.classList.add('visible');
+                    contactCards.forEach(card => {
+                        card.classList.add('visible');
+                    });
+                    
+                    // Initialize map if not already initialized
+                    if (!map && document.querySelector('#interactiveMap')) {
+                        setTimeout(initializeMap, 500);
+                    }
+                } else if (contactProgress <= 0.2 && contactShown) {
+                    contactShown = false;
+                    contactTitle.classList.remove('visible');
+                    contactCards.forEach(card => {
+                        card.classList.remove('visible');
+                    });
+                }
+                
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(checkScroll);
+                    ticking = true;
+                }
+            });
+            
+            // Initial check
+            checkScroll();
+        }
+        
+        // Make functions available globally for popup buttons
+        window.getDirections = getDirections;
+        window.viewOnMap = viewOnMap;
+    }
+})();
+</script>
