@@ -3,43 +3,75 @@
     <div class="gallery-particles" id="galleryParticles"></div>
     <h2 class="gallery-title">Our Gallery</h2>
     
-    <!-- Category Navigation Images in Row Layout -->
-    <div class="gallery-categories-row">
-        <div class="category-row-item" data-category="prophetic">
-            <div class="category-row-image">
-                <img src="https://images.unsplash.com/photo-1567593810070-7a5c0925344e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                     alt="Prophetic Ministry">
-                <div class="category-row-overlay">
-                    <h3 class="category-row-title">Prophetic</h3>
-                    <p class="category-row-subtitle">Moments of divine revelation and spiritual guidance</p>
-                    <div class="category-row-arrow">→</div>
+    <!-- Category Carousel (No Navdots) -->
+    <div class="gallery-categories-carousel">
+        <div class="categories-carousel-track">
+            <!-- Prophetic Category -->
+            <div class="category-carousel-item" data-category="prophetic">
+                <div class="category-carousel-image">
+                    <img src="https://images.unsplash.com/photo-1567593810070-7a5c0925344e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Prophetic Ministry">
+                    <div class="category-carousel-overlay">
+                        <h3 class="category-carousel-title">Prophetic</h3>
+                        <p class="category-carousel-subtitle">Moments of divine revelation and spiritual guidance</p>
+                        <div class="category-carousel-hint">Click to view →</div>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Praise & Worship Category -->
+            <div class="category-carousel-item" data-category="praise-worship">
+                <div class="category-carousel-image">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Praise & Worship">
+                    <div class="category-carousel-overlay">
+                        <h3 class="category-carousel-title">Praise & Worship</h3>
+                        <p class="category-carousel-subtitle">Celebrating God's presence through music and dance</p>
+                        <div class="category-carousel-hint">Click to view →</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Community Category -->
+            <div class="category-carousel-item" data-category="community">
+                <div class="category-carousel-image">
+                    <img src="https://images.unsplash.com/photo-1544809046-bb4777a241c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Community Fellowship">
+                    <div class="category-carousel-overlay">
+                        <h3 class="category-carousel-title">Community</h3>
+                        <p class="category-carousel-subtitle">Building relationships and sharing life together</p>
+                        <div class="category-carousel-hint">Click to view →</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Optional 4th Category (Christmas) - Uncomment if needed -->
+            <!--
+            <div class="category-carousel-item" data-category="christmas">
+                <div class="category-carousel-image">
+                    <img src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Christmas Celebrations">
+                    <div class="category-carousel-overlay">
+                        <h3 class="category-carousel-title">Christmas</h3>
+                        <p class="category-carousel-subtitle">Celebrating the birth of Jesus Christ together</p>
+                        <div class="category-carousel-hint">Click to view →</div>
+                    </div>
+                </div>
+            </div>
+            -->
         </div>
         
-        <div class="category-row-item" data-category="praise-worship">
-            <div class="category-row-image">
-                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                     alt="Praise & Worship">
-                <div class="category-row-overlay">
-                    <h3 class="category-row-title">Praise & Worship</h3>
-                    <p class="category-row-subtitle">Celebrating God's presence through music and dance</p>
-                    <div class="category-row-arrow">→</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="category-row-item" data-category="community">
-            <div class="category-row-image">
-                <img src="https://images.unsplash.com/photo-1544809046-bb4777a241c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                     alt="Community Fellowship">
-                <div class="category-row-overlay">
-                    <h3 class="category-row-title">Community</h3>
-                    <p class="category-row-subtitle">Building relationships and sharing life together</p>
-                    <div class="category-row-arrow">→</div>
-                </div>
-            </div>
-        </div>
+        <!-- Carousel Navigation Arrows -->
+        <button class="category-arrow category-arrow-prev" aria-label="Previous category">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+        <button class="category-arrow category-arrow-next" aria-label="Next category">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </button>
     </div>
     
     <!-- Gallery Content Container (Initially Hidden) -->
@@ -51,7 +83,15 @@
             <span>Back to Categories</span>
         </div>
         
-        <h3 class="gallery-category-title" id="categoryTitle">Gallery</h3>
+        <div class="gallery-header">
+            <h3 class="gallery-category-title" id="categoryTitle">Gallery</h3>
+            <button class="expand-all-button" id="expandAllBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/>
+                </svg>
+                <span>Expand All</span>
+            </button>
+        </div>
         
         <!-- Carousel Container -->
         <div class="gallery-carousel-container">
@@ -76,7 +116,7 @@
 </section>
 
 <style>
-/* GALLERY SECTION WITH ROW LAYOUT CATEGORIES */
+/* GALLERY SECTION WITH CAROUSEL LAYOUT */
 .gallery-section {
     position: absolute;
     top: 300vh;
@@ -111,109 +151,157 @@
     transform: translateY(0);
 }
 
-/* Category Navigation in Row Layout */
-.gallery-categories-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+/* Category Carousel */
+.gallery-categories-carousel {
+    position: relative;
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 60px;
+    overflow: hidden;
 }
 
-.category-row-item {
-    flex: 1;
+.categories-carousel-track {
+    display: flex;
+    gap: 30px;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 10px 40px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    cursor: grab;
+}
+
+.categories-carousel-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.categories-carousel-track.dragging {
+    scroll-behavior: auto;
+    cursor: grabbing;
+}
+
+/* Category Carousel Items */
+.category-carousel-item {
+    flex: 0 0 calc(33.333% - 20px);
+    scroll-snap-align: start;
+    min-width: 400px;
+    height: 500px;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    height: 450px;
-    min-width: 300px;
     -webkit-tap-highlight-color: transparent;
 }
 
-.category-row-item:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+.category-carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
 }
 
-.category-row-image {
+.category-carousel-image {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.category-row-image img {
+.category-carousel-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.8s ease;
 }
 
-.category-row-item:hover .category-row-image img {
-    transform: scale(1.15);
+.category-carousel-item:hover .category-carousel-image img {
+    transform: scale(1.1);
 }
 
-.category-row-overlay {
+.category-carousel-overlay {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     padding: 40px 30px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
     color: var(--white);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     opacity: 1;
+    transform: translateY(0);
     transition: all 0.4s ease;
 }
 
-.category-row-title {
+.category-carousel-title {
     font-size: 2.5rem;
     font-weight: 900;
     margin-bottom: 15px;
     color: var(--lime-green);
     text-transform: uppercase;
     letter-spacing: 2px;
-    transform: translateY(0);
-    transition: transform 0.4s ease;
 }
 
-.category-row-subtitle {
+.category-carousel-subtitle {
     font-size: 1.2rem;
     opacity: 0.9;
     line-height: 1.4;
     max-width: 90%;
-    margin-bottom: 20px;
-    transform: translateY(0);
-    transition: transform 0.4s ease 0.1s;
+    margin-bottom: 15px;
 }
 
-.category-row-arrow {
-    font-size: 2.5rem;
+.category-carousel-hint {
+    font-size: 1rem;
     color: var(--orange);
-    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
     opacity: 0;
-    transform: translateX(-20px);
-    transition: all 0.4s ease 0.2s;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
 }
 
-.category-row-item:hover .category-row-title {
-    transform: translateY(-10px);
-}
-
-.category-row-item:hover .category-row-subtitle {
-    transform: translateY(-10px);
-}
-
-.category-row-item:hover .category-row-arrow {
+.category-carousel-item:hover .category-carousel-hint {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* Category Navigation Arrows */
+.category-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--lime-green);
+    border-radius: 50%;
+    color: var(--lime-green);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.category-arrow:hover {
+    background: var(--lime-green);
+    color: #000;
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+}
+
+.category-arrow-prev {
+    left: 0;
+}
+
+.category-arrow-next {
+    right: 0;
+}
+
+.category-arrow svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* Gallery Content Container */
@@ -241,6 +329,59 @@
     }
 }
 
+/* Gallery Header with Expand Button */
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.gallery-category-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    color: var(--lime-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.expand-all-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--orange);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 12px 24px;
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: rgba(255, 140, 0, 0.1);
+    white-space: nowrap;
+}
+
+.expand-all-button:hover {
+    background: var(--orange);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+}
+
+.expand-all-button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.expand-all-button:hover svg {
+    transform: scale(1.1);
+}
+
 /* Back Button */
 .gallery-back-button {
     display: inline-flex;
@@ -252,7 +393,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     padding: 10px 20px;
     border: 2px solid var(--orange);
     border-radius: 50px;
@@ -276,17 +417,6 @@
     transform: translateX(-3px);
 }
 
-/* Category Title */
-.gallery-category-title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 900;
-    color: var(--lime-green);
-    margin-bottom: 40px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
 /* Carousel Container */
 .gallery-carousel-container {
     position: relative;
@@ -294,7 +424,7 @@
     overflow: visible;
 }
 
-/* Carousel Track */
+/* Gallery Carousel Track */
 .gallery-carousel {
     display: flex;
     gap: 30px;
@@ -316,7 +446,7 @@
     cursor: grabbing;
 }
 
-/* Carousel Items */
+/* Gallery Carousel Items */
 .gallery-carousel-item {
     flex: 0 0 calc(33.333% - 20px);
     scroll-snap-align: start;
@@ -360,7 +490,7 @@
     transform: scale(1.1);
 }
 
-/* Carousel Overlay */
+/* Carousel Overlay with Expand Button */
 .carousel-text-overlay {
     position: absolute;
     bottom: 0;
@@ -372,6 +502,9 @@
     transform: translateY(20px);
     opacity: 0;
     transition: all 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .gallery-carousel-item.active .carousel-text-overlay,
@@ -393,7 +526,43 @@
     font-size: 1.1rem;
     opacity: 0.9;
     line-height: 1.4;
+    margin-bottom: 20px;
     max-width: 80%;
+}
+
+.expand-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--orange);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: rgba(255, 140, 0, 0.1);
+    margin-top: 10px;
+}
+
+.expand-button:hover {
+    background: var(--orange);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+}
+
+.expand-button svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.expand-button:hover svg {
+    transform: scale(1.1);
 }
 
 /* Navigation Arrows */
@@ -437,27 +606,24 @@
 }
 
 /* Hide categories when gallery is active */
-.gallery-categories-row.hidden {
+.gallery-categories-carousel.hidden {
     display: none;
 }
 
-/* Responsive Design - Row Layout */
+/* Responsive Design */
 @media (max-width: 1200px) {
-    .gallery-categories-row {
-        gap: 20px;
+    .gallery-categories-carousel {
+        padding: 0 50px;
     }
     
-    .category-row-item {
-        height: 400px;
-        min-width: 250px;
+    .category-carousel-item {
+        flex: 0 0 calc(50% - 15px);
+        min-width: 350px;
+        height: 450px;
     }
     
-    .category-row-title {
-        font-size: 2rem;
-    }
-    
-    .category-row-subtitle {
-        font-size: 1rem;
+    .category-carousel-title {
+        font-size: 2.2rem;
     }
     
     .gallery-carousel-item {
@@ -471,28 +637,14 @@
 }
 
 @media (max-width: 900px) {
-    .gallery-categories-row {
+    .gallery-header {
         flex-direction: column;
-        gap: 25px;
-        max-width: 600px;
+        align-items: flex-start;
+        gap: 15px;
     }
     
-    .category-row-item {
-        width: 100%;
-        height: 350px;
-        min-width: auto;
-    }
-    
-    .category-row-overlay {
-        padding: 30px 25px;
-    }
-    
-    .category-row-title {
-        font-size: 2.2rem;
-    }
-    
-    .category-row-subtitle {
-        font-size: 1.1rem;
+    .expand-all-button {
+        align-self: flex-start;
     }
 }
 
@@ -501,30 +653,31 @@
         padding: 60px 15px;
     }
     
-    .gallery-categories-row {
-        gap: 20px;
+    .gallery-categories-carousel {
+        padding: 0 40px;
     }
     
-    .category-row-item {
-        height: 320px;
+    .category-carousel-item {
+        flex: 0 0 calc(100% - 40px);
+        min-width: 300px;
+        height: 400px;
     }
     
-    .category-row-overlay {
-        padding: 25px 20px;
+    .category-carousel-overlay {
+        padding: 30px 25px;
     }
     
-    .category-row-title {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
-    }
-    
-    .category-row-subtitle {
-        font-size: 1rem;
-        margin-bottom: 15px;
-    }
-    
-    .category-row-arrow {
+    .category-carousel-title {
         font-size: 2rem;
+    }
+    
+    .category-carousel-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .category-arrow {
+        width: 50px;
+        height: 50px;
     }
     
     .gallery-carousel-container {
@@ -572,29 +725,36 @@
         padding: 40px 10px;
     }
     
-    .gallery-categories-row {
-        gap: 15px;
+    .gallery-categories-carousel {
+        padding: 0 30px;
     }
     
-    .category-row-item {
-        height: 280px;
+    .category-carousel-item {
+        flex: 0 0 calc(100% - 30px);
+        min-width: 280px;
+        height: 350px;
     }
     
-    .category-row-overlay {
-        padding: 20px 15px;
+    .category-carousel-overlay {
+        padding: 25px 20px;
     }
     
-    .category-row-title {
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-    }
-    
-    .category-row-subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .category-row-arrow {
+    .category-carousel-title {
         font-size: 1.8rem;
+    }
+    
+    .category-carousel-subtitle {
+        font-size: 1rem;
+    }
+    
+    .category-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .category-arrow svg {
+        width: 20px;
+        height: 20px;
     }
     
     .gallery-back-button {
@@ -604,7 +764,11 @@
     
     .gallery-category-title {
         font-size: clamp(2rem, 5vw, 3rem);
-        margin-bottom: 30px;
+    }
+    
+    .expand-all-button {
+        font-size: 1rem;
+        padding: 10px 20px;
     }
     
     .gallery-carousel {
@@ -629,6 +793,11 @@
         padding: 30px 20px;
     }
     
+    .expand-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
     .carousel-arrow {
         width: 40px;
         height: 40px;
@@ -647,25 +816,10 @@
         right: -15px;
     }
 }
-
-/* For very small screens */
-@media (max-width: 360px) {
-    .category-row-item {
-        height: 250px;
-    }
-    
-    .category-row-title {
-        font-size: 1.3rem;
-    }
-    
-    .category-row-subtitle {
-        font-size: 0.85rem;
-    }
-}
 </style>
 
 <script>
-// Gallery with Row Layout Categories
+// Gallery with Carousel Layout and Expand Feature
 (function() {
     'use strict';
     
@@ -675,96 +829,114 @@
             {
                 image: 'https://images.unsplash.com/photo-1567593810070-7a5c0925344e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Prophetic Worship',
-                subtitle: 'Divine encounters during worship sessions'
+                subtitle: 'Divine encounters during worship sessions',
+                description: 'Powerful moments where the Holy Spirit moves through our worship, bringing prophetic words and visions that edify the church and direct individuals.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1577486643317-4c9305f3d89d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Spiritual Guidance',
-                subtitle: 'Moments of prophetic revelation and direction'
+                subtitle: 'Moments of prophetic revelation and direction',
+                description: 'Personal prophetic ministry where individuals receive specific guidance, confirmation, and direction for their lives and ministries.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Prayer Gatherings',
-                subtitle: 'Corporate prayer and intercession sessions'
+                subtitle: 'Corporate prayer and intercession sessions',
+                description: 'United prayer meetings where the church comes together to intercede for nations, communities, and personal breakthroughs.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1542401886-65d6c61db217?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Ministry Sessions',
-                subtitle: 'Prophetic ministry and personal prayer'
+                subtitle: 'Prophetic ministry and personal prayer',
+                description: 'One-on-one ministry sessions where trained ministers pray with individuals, offering prophetic insights and spiritual counsel.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Spiritual Breakthrough',
-                subtitle: 'Moments of breakthrough and deliverance'
+                subtitle: 'Moments of breakthrough and deliverance',
+                description: 'Life-changing encounters where chains are broken, strongholds are destroyed, and individuals experience true freedom in Christ.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1510832842230-87253f48d74f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Healing Ministry',
-                subtitle: 'Divine healing and restoration moments'
+                subtitle: 'Divine healing and restoration moments',
+                description: 'Miraculous healing services where physical, emotional, and spiritual healing flows through the power of the Holy Spirit.'
             }
         ],
         'praise-worship': [
             {
                 image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Live Worship Band',
-                subtitle: 'Our talented worship team in action'
+                subtitle: 'Our talented worship team in action',
+                description: 'Our dedicated musicians and vocalists leading the congregation into deep, authentic worship experiences that honor God.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Choir Performances',
-                subtitle: 'Harmonious voices praising together'
+                subtitle: 'Harmonious voices praising together',
+                description: 'Our choir ministers through powerful harmonies and anointed songs that usher in the presence of God during services.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Dance Ministry',
-                subtitle: 'Expressive worship through dance'
+                subtitle: 'Expressive worship through dance',
+                description: 'Worship dancers using movement and flags to express worship and warfare, creating a visual celebration of God\'s glory.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Youth Worship',
-                subtitle: 'Young people passionate for God'
+                subtitle: 'Young people passionate for God',
+                description: 'Our youth ministry leading vibrant, energetic worship that resonates with the younger generation while maintaining biblical foundation.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Night of Worship',
-                subtitle: 'Extended worship and prayer nights'
+                subtitle: 'Extended worship and prayer nights',
+                description: 'Special extended worship services where we focus entirely on praising God, often lasting several hours of uninterrupted worship.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Instruments of Praise',
-                subtitle: 'Musical excellence for God\'s glory'
+                subtitle: 'Musical excellence for God\'s glory',
+                description: 'Skilled instrumentalists offering their gifts to God, creating beautiful soundscapes that enhance the worship experience.'
             }
         ],
         'community': [
             {
                 image: 'https://images.unsplash.com/photo-1544809046-bb4777a241c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Fellowship Meals',
-                subtitle: 'Sharing meals and building relationships'
+                subtitle: 'Sharing meals and building relationships',
+                description: 'Regular potluck dinners and shared meals where church members connect, share testimonies, and build authentic relationships.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Community Outreach',
-                subtitle: 'Serving and impacting our local community'
+                subtitle: 'Serving and impacting our local community',
+                description: 'Outreach programs including food drives, neighborhood cleanups, and support for local shelters and community centers.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Small Groups',
-                subtitle: 'Intimate fellowship and Bible study'
+                subtitle: 'Intimate fellowship and Bible study',
+                description: 'Home-based small groups meeting weekly for Bible study, prayer, and mutual support in various neighborhoods.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Youth Activities',
-                subtitle: 'Young people connecting and growing'
+                subtitle: 'Young people connecting and growing',
+                description: 'Fun and engaging activities for youth including game nights, outings, and discipleship programs tailored for teenagers.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Family Events',
-                subtitle: 'Church family bonding and fun'
+                subtitle: 'Church family bonding and fun',
+                description: 'Family-friendly events like picnics, movie nights, and holiday celebrations that strengthen family bonds within the church.'
             },
             {
                 image: 'https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
                 title: 'Volunteer Teams',
-                subtitle: 'Serving together in various ministries'
+                subtitle: 'Serving together in various ministries',
+                description: 'Teams of volunteers working together in hospitality, children\'s ministry, maintenance, and other areas of service.'
             }
         ]
     };
@@ -783,15 +955,19 @@
     
     function initGallery() {
         // Elements
-        const categoryItems = document.querySelectorAll('.category-row-item');
+        const categoryItems = document.querySelectorAll('.category-carousel-item');
         const galleryContent = document.getElementById('galleryContent');
         const galleryBackBtn = document.getElementById('galleryBackBtn');
         const categoryTitle = document.getElementById('categoryTitle');
-        const galleryCategories = document.querySelector('.gallery-categories-row');
+        const galleryCategories = document.querySelector('.gallery-categories-carousel');
         const carousel = document.querySelector('.gallery-carousel');
         const prevBtn = document.querySelector('.carousel-arrow-prev');
         const nextBtn = document.querySelector('.carousel-arrow-next');
+        const categoryPrevBtn = document.querySelector('.category-arrow-prev');
+        const categoryNextBtn = document.querySelector('.category-arrow-next');
         const galleryTitle = document.querySelector('.gallery-title');
+        const expandAllBtn = document.getElementById('expandAllBtn');
+        const categoryTrack = document.querySelector('.categories-carousel-track');
         
         // State
         let currentCategory = '';
@@ -800,6 +976,8 @@
         let startX = 0;
         let scrollLeft = 0;
         let galleryShown = false;
+        let categoryCurrentIndex = 0;
+        let isCategoryDragging = false;
         
         // Initialize
         setupGallery();
@@ -831,6 +1009,9 @@
             // Back button
             galleryBackBtn.addEventListener('click', closeGallery);
             
+            // Expand All button
+            expandAllBtn.addEventListener('click', expandAllImages);
+            
             // Carousel navigation
             if (prevBtn) {
                 prevBtn.addEventListener('click', () => navigateCarousel(-1));
@@ -840,7 +1021,29 @@
                 nextBtn.addEventListener('click', () => navigateCarousel(1));
             }
             
-            // Carousel drag for desktop
+            // Category carousel navigation
+            if (categoryPrevBtn) {
+                categoryPrevBtn.addEventListener('click', () => navigateCategoryCarousel(-1));
+            }
+            
+            if (categoryNextBtn) {
+                categoryNextBtn.addEventListener('click', () => navigateCategoryCarousel(1));
+            }
+            
+            // Category carousel drag for desktop
+            if (categoryTrack) {
+                categoryTrack.addEventListener('mousedown', startCategoryDrag);
+                categoryTrack.addEventListener('mousemove', dragCategory);
+                categoryTrack.addEventListener('mouseup', endCategoryDrag);
+                categoryTrack.addEventListener('mouseleave', endCategoryDrag);
+                
+                // Touch events for mobile
+                categoryTrack.addEventListener('touchstart', startCategoryDragTouch);
+                categoryTrack.addEventListener('touchmove', dragCategoryTouch);
+                categoryTrack.addEventListener('touchend', endCategoryDrag);
+            }
+            
+            // Gallery carousel drag for desktop
             if (carousel) {
                 carousel.addEventListener('mousedown', startDrag);
                 carousel.addEventListener('mousemove', drag);
@@ -915,15 +1118,66 @@
                         <div class="carousel-text-overlay">
                             <h3 class="carousel-caption">${item.title}</h3>
                             <p class="carousel-subtitle">${item.subtitle}</p>
+                            <button class="expand-button" data-index="${index}">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/>
+                                </svg>
+                                <span>Expand</span>
+                            </button>
+                            <div class="expanded-content" style="display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                                <p class="expanded-description">${item.description}</p>
+                            </div>
                         </div>
                     </div>
                 `;
                 
                 carousel.appendChild(carouselItem);
+                
+                // Add click event to expand button
+                const expandBtn = carouselItem.querySelector('.expand-button');
+                expandBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const idx = parseInt(this.getAttribute('data-index'));
+                    toggleExpand(idx);
+                });
             });
             
             // Update carousel functionality
             updateCarousel();
+        }
+        
+        function toggleExpand(index) {
+            const carouselItems = document.querySelectorAll('.gallery-carousel-item');
+            const carouselItem = carouselItems[index];
+            
+            if (!carouselItem) return;
+            
+            const expandedContent = carouselItem.querySelector('.expanded-content');
+            const expandBtn = carouselItem.querySelector('.expand-button span');
+            
+            if (expandedContent.style.display === 'block') {
+                // Collapse
+                expandedContent.style.display = 'none';
+                expandBtn.textContent = 'Expand';
+            } else {
+                // Expand
+                expandedContent.style.display = 'block';
+                expandBtn.textContent = 'Collapse';
+            }
+        }
+        
+        function expandAllImages() {
+            const carouselItems = document.querySelectorAll('.gallery-carousel-item');
+            
+            carouselItems.forEach((item, index) => {
+                const expandedContent = item.querySelector('.expanded-content');
+                const expandBtn = item.querySelector('.expand-button span');
+                
+                if (expandedContent && expandBtn) {
+                    expandedContent.style.display = 'block';
+                    expandBtn.textContent = 'Collapse';
+                }
+            });
         }
         
         function updateCarousel() {
@@ -955,6 +1209,22 @@
             updateActiveItem(newIndex);
         }
         
+        function navigateCategoryCarousel(direction) {
+            const categoryItems = document.querySelectorAll('.category-carousel-item');
+            if (categoryItems.length === 0) return;
+            
+            let newIndex = categoryCurrentIndex + direction;
+            
+            if (newIndex < 0) newIndex = categoryItems.length - 1;
+            if (newIndex >= categoryItems.length) newIndex = 0;
+            
+            categoryCurrentIndex = newIndex;
+            
+            // Scroll to the slide
+            const itemWidth = categoryItems[0].offsetWidth + 30; // width + gap
+            categoryTrack.scrollLeft = itemWidth * newIndex;
+        }
+        
         function updateActiveItem(index) {
             const carouselItems = document.querySelectorAll('.gallery-carousel-item');
             
@@ -969,7 +1239,42 @@
             }
         }
         
-        // Carousel drag functions
+        // Category carousel drag functions
+        function startCategoryDrag(e) {
+            isCategoryDragging = true;
+            categoryTrack.classList.add('dragging');
+            startX = e.pageX - categoryTrack.offsetLeft;
+            scrollLeft = categoryTrack.scrollLeft;
+        }
+        
+        function dragCategory(e) {
+            if (!isCategoryDragging) return;
+            e.preventDefault();
+            const x = e.pageX - categoryTrack.offsetLeft;
+            const walk = (x - startX) * 2;
+            categoryTrack.scrollLeft = scrollLeft - walk;
+        }
+        
+        function startCategoryDragTouch(e) {
+            isCategoryDragging = true;
+            categoryTrack.classList.add('dragging');
+            startX = e.touches[0].pageX - categoryTrack.offsetLeft;
+            scrollLeft = categoryTrack.scrollLeft;
+        }
+        
+        function dragCategoryTouch(e) {
+            if (!isCategoryDragging) return;
+            const x = e.touches[0].pageX - categoryTrack.offsetLeft;
+            const walk = (x - startX) * 2;
+            categoryTrack.scrollLeft = scrollLeft - walk;
+        }
+        
+        function endCategoryDrag() {
+            isCategoryDragging = false;
+            categoryTrack.classList.remove('dragging');
+        }
+        
+        // Gallery carousel drag functions
         function startDrag(e) {
             isDragging = true;
             carousel.classList.add('dragging');
