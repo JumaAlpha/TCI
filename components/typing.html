@@ -1,746 +1,1386 @@
-<div class="typing-locked-section">
-    <div class="typing-locked-bg"></div>
+<!-- Gallery Section -->
+<section class="gallery-section">
+    <div class="gallery-particles" id="galleryParticles"></div>
+    <h2 class="gallery-title">Our Gallery</h2>
     
-    <!-- Primary Text (Fixed) -->
-    <h1 class="typing-primary">We are</h1>
+    <!-- Category Carousel (No Navdots) -->
+    <div class="gallery-categories-carousel">
+        <div class="categories-carousel-track">
+            <!-- Prophetic Category -->
+            <div class="category-carousel-item" data-category="prophetic">
+                <div class="category-carousel-image">
+                    <img src="https://images.unsplash.com/photo-1567593810070-7a5c0925344e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Prophetic Ministry">
+                    <div class="category-carousel-overlay">
+                        <h3 class="category-carousel-title">Prophetic</h3>
+                        <p class="category-carousel-subtitle">Moments of divine revelation and spiritual guidance</p>
+                        <div class="category-carousel-hint">Click to view →</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Praise & Worship Category -->
+            <div class="category-carousel-item" data-category="praise-worship">
+                <div class="category-carousel-image">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Praise & Worship">
+                    <div class="category-carousel-overlay">
+                        <h3 class="category-carousel-title">Praise & Worship</h3>
+                        <p class="category-carousel-subtitle">Celebrating God's presence through music and dance</p>
+                        <div class="category-carousel-hint">Click to view →</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Community Category -->
+            <div class="category-carousel-item" data-category="community">
+                <div class="category-carousel-image">
+                    <img src="https://images.unsplash.com/photo-1544809046-bb4777a241c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Community Fellowship">
+                    <div class="category-carousel-overlay">
+                        <h3 class="category-carousel-title">Community</h3>
+                        <p class="category-carousel-subtitle">Building relationships and sharing life together</p>
+                        <div class="category-carousel-hint">Click to view →</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Optional 4th Category (Christmas) - Uncomment if needed -->
+            <!--
+            <div class="category-carousel-item" data-category="christmas">
+                <div class="category-carousel-image">
+                    <img src="https://images.unsplash.com/photo-1482517967863-00e15c9b44be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="Christmas Celebrations">
+                    <div class="category-carousel-overlay">
+                        <h3 class="category-carousel-title">Christmas</h3>
+                        <p class="category-carousel-subtitle">Celebrating the birth of Jesus Christ together</p>
+                        <div class="category-carousel-hint">Click to view →</div>
+                    </div>
+                </div>
+            </div>
+            -->
+        </div>
+        
+        <!-- Carousel Navigation Arrows -->
+        <button class="category-arrow category-arrow-prev" aria-label="Previous category">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+        <button class="category-arrow category-arrow-next" aria-label="Next category">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </button>
+    </div>
     
-    <!-- Secondary Text Container -->
-    <div class="typing-secondary-container">
-        <div class="typing-secondary" id="typingText">
-            <span id="typingContent">a christ community</span>
-            <span class="typing-cursor"></span>
+    <!-- Gallery Content Container (Initially Hidden) -->
+    <div class="gallery-content-container" id="galleryContent">
+        <div class="gallery-back-button" id="galleryBackBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            <span>Back to Categories</span>
+        </div>
+        
+        <div class="gallery-header">
+            <h3 class="gallery-category-title" id="categoryTitle">Gallery</h3>
+            <button class="expand-all-button" id="expandAllBtn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/>
+                </svg>
+                <span>Expand All</span>
+            </button>
+        </div>
+        
+        <!-- Carousel Container -->
+        <div class="gallery-carousel-container">
+            <!-- Carousel Wrapper -->
+            <div class="gallery-carousel">
+                <!-- Images will be loaded dynamically based on category -->
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous image">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 18l-6-6 6-6"/>
+                </svg>
+            </button>
+            <button class="carousel-arrow carousel-arrow-next" aria-label="Next image">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 18l6-6-6-6"/>
+                </svg>
+            </button>
         </div>
     </div>
-    
-    <!-- Progress Indicator -->
-    <div class="typing-progress-indicator">
-        <div class="progress-dot active" data-index="0"></div>
-        <div class="progress-dot" data-index="1"></div>
-        <div class="progress-dot" data-index="2"></div>
-        <div class="progress-dot" data-index="3"></div>
-    </div>
-    
-    <!-- Scroll Instruction -->
-    <div class="typing-instruction">
-        <span>Scroll to change text</span>
-        <div class="scroll-arrow">↓</div>
-    </div>
-</div>
-
-<!-- Scroll Indicator (Global) -->
-<div class="scroll-indicator">
-    Scroll
-    <div class="scroll-line"></div>
-</div>
+</section>
 
 <style>
-/* Color Variables */
-:root {
-    --lime-green: #32cd32;
-    --lime-green-light: #7cfc00;
-    --lime-green-dark: #228b22;
-    --orange: #ff8c00;
-    --orange-light: #ffa500;
-    --orange-dark: #ff4500;
-    --white: #ffffff;
-    --black: #000000;
-    --gray-dark: #1a1a1a;
-    --gray-light: #333333;
-}
-
-/* Scroll-Locked Typing Section - Step-based scrolling */
-.typing-locked-section {
-    position: fixed;
-    top: 0;
+/* GALLERY SECTION WITH CAROUSEL LAYOUT */
+.gallery-section {
+    position: absolute;
+    top: 300vh;
     left: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: #000;
-    z-index: 6;
+    z-index: 3;
+    padding: 80px 20px;
+    overflow: hidden;
+    transition: opacity 1s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
 }
 
-.typing-locked-section.active {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.typing-locked-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 20% 30%, rgba(50, 205, 50, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(255, 140, 0, 0.1) 0%, transparent 50%);
-    z-index: -1;
-}
-
-.typing-primary {
+.gallery-title {
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 900;
-    color: var(--white);
-    text-align: center;
-    margin-bottom: 40px;
-    position: relative;
-    opacity: 0.9;
-}
-
-.typing-secondary-container {
-    position: relative;
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.typing-secondary {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 900;
     color: var(--lime-green);
     text-align: center;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 100%;
-}
-
-.typing-cursor {
-    display: inline-block;
-    width: 3px;
-    height: 1.2em;
-    background-color: var(--orange);
-    margin-left: 8px;
-    animation: blink 1s infinite;
-    vertical-align: middle;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-/* Progress indicator with dots */
-.typing-progress-indicator {
-    display: flex;
-    gap: 20px;
-    margin-top: 60px;
-    position: relative;
-}
-
-.progress-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 140, 0, 0.3);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-}
-
-.progress-dot.active {
-    background: var(--lime-green);
-    transform: scale(1.4);
-    box-shadow: 0 0 15px rgba(50, 205, 50, 0.5);
-}
-
-.progress-dot::after {
-    content: attr(data-index);
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255, 140, 0, 0.5);
-    font-size: 12px;
-    font-weight: 700;
+    margin-bottom: 60px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: translateY(30px);
+    transition: all 1s ease 0.3s;
+    position: relative;
+    z-index: 1;
 }
 
-.progress-dot:hover::after {
+.gallery-title.visible {
     opacity: 1;
+    transform: translateY(0);
 }
 
-/* Scroll instruction */
-.typing-instruction {
-    position: absolute;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--orange);
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.scroll-arrow {
-    font-size: 24px;
-    color: var(--lime-green);
-    animation: bounce 2s infinite;
-    cursor: pointer;
-}
-
-@keyframes bounce {
-    0%, 100% { 
-        transform: translateY(0);
-        opacity: 0.7;
-    }
-    50% { 
-        transform: translateY(8px);
-        opacity: 1;
-    }
-}
-
-/* Animation for text change */
-@keyframes textFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes textFadeOut {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-}
-
-.typing-text-enter {
-    animation: textFadeIn 0.5s ease forwards;
-}
-
-.typing-text-exit {
-    animation: textFadeOut 0.5s ease forwards;
-}
-
-/* Scroll indicator styles */
-.scroll-indicator {
-    position: fixed;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--white);
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    z-index: 10;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
-}
-
-.scroll-indicator.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.scroll-line {
-    width: 1px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.5);
-    margin: 10px auto 0;
+/* Category Carousel */
+.gallery-categories-carousel {
     position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 60px;
     overflow: hidden;
 }
 
-.scroll-line::after {
-    content: '';
-    position: absolute;
+.categories-carousel-track {
+    display: flex;
+    gap: 30px;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 10px 40px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    cursor: grab;
+}
+
+.categories-carousel-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.categories-carousel-track.dragging {
+    scroll-behavior: auto;
+    cursor: grabbing;
+}
+
+/* Category Carousel Items */
+.category-carousel-item {
+    flex: 0 0 calc(33.333% - 20px);
+    scroll-snap-align: start;
+    min-width: 400px;
+    height: 500px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.category-carousel-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+}
+
+.category-carousel-image {
+    position: relative;
     width: 100%;
-    height: 20px;
+    height: 100%;
+}
+
+.category-carousel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.category-carousel-item:hover .category-carousel-image img {
+    transform: scale(1.1);
+}
+
+.category-carousel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    color: var(--white);
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+}
+
+.category-carousel-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--lime-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.category-carousel-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    line-height: 1.4;
+    max-width: 90%;
+    margin-bottom: 15px;
+}
+
+.category-carousel-hint {
+    font-size: 1rem;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.category-carousel-item:hover .category-carousel-hint {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Category Navigation Arrows */
+.category-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--lime-green);
+    border-radius: 50%;
+    color: var(--lime-green);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.category-arrow:hover {
     background: var(--lime-green);
-    animation: scrollLine 2s infinite ease-in-out;
+    color: #000;
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
 }
 
-/* Override conflicting styles from common.css */
-.typing-locked-section .typing-secondary {
-    font-size: clamp(2.5rem, 6vw, 4rem) !important;
-    font-weight: 900 !important;
-    color: var(--lime-green) !important;
-    text-align: center !important;
-    min-height: 80px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    position: relative !important;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    width: 100% !important;
-    opacity: 1 !important;
-    transform: none !important;
+.category-arrow-prev {
+    left: 0;
 }
 
-.typing-locked-section .typing-primary {
-    font-size: clamp(3rem, 8vw, 6rem) !important;
-    font-weight: 900 !important;
-    color: var(--white) !important;
-    text-align: center !important;
-    margin-bottom: 40px !important;
-    position: relative !important;
-    opacity: 1 !important;
+.category-arrow-next {
+    right: 0;
 }
 
-.typing-locked-section .typing-secondary-container {
-    position: relative !important;
-    min-height: 120px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
+.category-arrow svg {
+    width: 24px;
+    height: 24px;
 }
 
-@keyframes scrollLine {
+/* Gallery Content Container */
+.gallery-content-container {
+    display: none;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.gallery-content-container.active {
+    display: block;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
     from {
-        top: -20px;
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-        top: 100%;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gallery Header with Expand Button */
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.gallery-category-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    color: var(--lime-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.expand-all-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--orange);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 12px 24px;
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: rgba(255, 140, 0, 0.1);
+    white-space: nowrap;
+}
+
+.expand-all-button:hover {
+    background: var(--orange);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+}
+
+.expand-all-button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.expand-all-button:hover svg {
+    transform: scale(1.1);
+}
+
+/* Back Button */
+.gallery-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--orange);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: rgba(255, 140, 0, 0.1);
+}
+
+.gallery-back-button:hover {
+    background: var(--orange);
+    color: #000;
+    transform: translateX(-5px);
+}
+
+.gallery-back-button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-back-button:hover svg {
+    transform: translateX(-3px);
+}
+
+/* Carousel Container */
+.gallery-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+/* Gallery Carousel Track */
+.gallery-carousel {
+    display: flex;
+    gap: 30px;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 0 40px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    cursor: grab;
+}
+
+.gallery-carousel::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.gallery-carousel.dragging {
+    scroll-behavior: auto;
+    cursor: grabbing;
+}
+
+/* Gallery Carousel Items */
+.gallery-carousel-item {
+    flex: 0 0 calc(33.333% - 20px);
+    scroll-snap-align: start;
+    min-height: 500px;
+    opacity: 0.4;
+    transform: scale(0.95);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-carousel-item.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
+}
+
+.gallery-carousel-item:hover {
+    transform: scale(1.02);
+}
+
+.carousel-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.gallery-carousel-item:hover .carousel-img {
+    transform: scale(1.1);
+}
+
+/* Carousel Overlay with Expand Button */
+.carousel-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    color: var(--white);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.gallery-carousel-item.active .carousel-text-overlay,
+.gallery-carousel-item:hover .carousel-text-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-caption {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--lime-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.carousel-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    max-width: 80%;
+}
+
+.expand-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--orange);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 2px solid var(--orange);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: rgba(255, 140, 0, 0.1);
+    margin-top: 10px;
+}
+
+.expand-button:hover {
+    background: var(--orange);
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 140, 0, 0.3);
+}
+
+.expand-button svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.expand-button:hover svg {
+    transform: scale(1.1);
+}
+
+/* Navigation Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--lime-green);
+    border-radius: 50%;
+    color: var(--lime-green);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.carousel-arrow:hover {
+    background: var(--lime-green);
+    color: #000;
+    transform: translateY(-50%) scale(1.1);
+    opacity: 1;
+}
+
+.carousel-arrow-prev {
+    left: -30px;
+}
+
+.carousel-arrow-next {
+    right: -30px;
+}
+
+.carousel-arrow svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Hide categories when gallery is active */
+.gallery-categories-carousel.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .gallery-categories-carousel {
+        padding: 0 50px;
+    }
+    
+    .category-carousel-item {
+        flex: 0 0 calc(50% - 15px);
+        min-width: 350px;
+        height: 450px;
+    }
+    
+    .category-carousel-title {
+        font-size: 2.2rem;
+    }
+    
+    .gallery-carousel-item {
+        flex: 0 0 calc(50% - 15px);
+        min-height: 450px;
+    }
+    
+    .carousel-caption {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .expand-all-button {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-section {
+        padding: 60px 15px;
+    }
+    
+    .gallery-categories-carousel {
+        padding: 0 40px;
+    }
+    
+    .category-carousel-item {
+        flex: 0 0 calc(100% - 40px);
+        min-width: 300px;
+        height: 400px;
+    }
+    
+    .category-carousel-overlay {
+        padding: 30px 25px;
+    }
+    
+    .category-carousel-title {
+        font-size: 2rem;
+    }
+    
+    .category-carousel-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .category-arrow {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .gallery-carousel-container {
+        padding: 0;
+    }
+    
+    .gallery-carousel {
+        gap: 20px;
+        padding-bottom: 30px;
+    }
+    
+    .gallery-carousel-item {
+        flex: 0 0 calc(100% - 40px);
+        min-height: 400px;
+    }
+    
+    .carousel-image-container {
+        min-height: 400px;
+    }
+    
+    .carousel-caption {
+        font-size: 1.6rem;
+    }
+    
+    .carousel-subtitle {
+        font-size: 1rem;
+    }
+    
+    .carousel-arrow {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .carousel-arrow-prev {
+        left: -20px;
+    }
+    
+    .carousel-arrow-next {
+        right: -20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-section {
+        padding: 40px 10px;
+    }
+    
+    .gallery-categories-carousel {
+        padding: 0 30px;
+    }
+    
+    .category-carousel-item {
+        flex: 0 0 calc(100% - 30px);
+        min-width: 280px;
+        height: 350px;
+    }
+    
+    .category-carousel-overlay {
+        padding: 25px 20px;
+    }
+    
+    .category-carousel-title {
+        font-size: 1.8rem;
+    }
+    
+    .category-carousel-subtitle {
+        font-size: 1rem;
+    }
+    
+    .category-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .category-arrow svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .gallery-back-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+    
+    .gallery-category-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+    
+    .expand-all-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    
+    .gallery-carousel {
+        gap: 15px;
+    }
+    
+    .gallery-carousel-item {
+        flex: 0 0 calc(100% - 30px);
+        min-height: 350px;
+    }
+    
+    .carousel-image-container {
+        min-height: 350px;
+    }
+    
+    .carousel-caption {
+        font-size: 1.4rem;
+        padding: 0 20px;
+    }
+    
+    .carousel-text-overlay {
+        padding: 30px 20px;
+    }
+    
+    .expand-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-arrow svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .carousel-arrow-prev {
+        left: -15px;
+    }
+    
+    .carousel-arrow-next {
+        right: -15px;
     }
 }
 </style>
 
 <script>
-    // Self-contained typing section functionality
+// Gallery with Carousel Layout and Expand Feature
 (function() {
     'use strict';
     
-    // Wait for component to be loaded into DOM
-    const checkElement = setInterval(() => {
-        const typingSection = document.querySelector('.typing-locked-section');
-        if (typingSection) {
-            clearInterval(checkElement);
-            initTypingSection();
-        }
-    }, 100);
+    // Gallery data for each category
+    const galleryData = {
+        'prophetic': [
+            {
+                image: 'https://images.unsplash.com/photo-1567593810070-7a5c0925344e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Prophetic Worship',
+                subtitle: 'Divine encounters during worship sessions',
+                description: 'Powerful moments where the Holy Spirit moves through our worship, bringing prophetic words and visions that edify the church and direct individuals.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1577486643317-4c9305f3d89d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Spiritual Guidance',
+                subtitle: 'Moments of prophetic revelation and direction',
+                description: 'Personal prophetic ministry where individuals receive specific guidance, confirmation, and direction for their lives and ministries.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Prayer Gatherings',
+                subtitle: 'Corporate prayer and intercession sessions',
+                description: 'United prayer meetings where the church comes together to intercede for nations, communities, and personal breakthroughs.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1542401886-65d6c61db217?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Ministry Sessions',
+                subtitle: 'Prophetic ministry and personal prayer',
+                description: 'One-on-one ministry sessions where trained ministers pray with individuals, offering prophetic insights and spiritual counsel.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1528164344705-47542687000d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Spiritual Breakthrough',
+                subtitle: 'Moments of breakthrough and deliverance',
+                description: 'Life-changing encounters where chains are broken, strongholds are destroyed, and individuals experience true freedom in Christ.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1510832842230-87253f48d74f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Healing Ministry',
+                subtitle: 'Divine healing and restoration moments',
+                description: 'Miraculous healing services where physical, emotional, and spiritual healing flows through the power of the Holy Spirit.'
+            }
+        ],
+        'praise-worship': [
+            {
+                image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Live Worship Band',
+                subtitle: 'Our talented worship team in action',
+                description: 'Our dedicated musicians and vocalists leading the congregation into deep, authentic worship experiences that honor God.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Choir Performances',
+                subtitle: 'Harmonious voices praising together',
+                description: 'Our choir ministers through powerful harmonies and anointed songs that usher in the presence of God during services.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Dance Ministry',
+                subtitle: 'Expressive worship through dance',
+                description: 'Worship dancers using movement and flags to express worship and warfare, creating a visual celebration of God\'s glory.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1511735111819-9a3f7709049c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Youth Worship',
+                subtitle: 'Young people passionate for God',
+                description: 'Our youth ministry leading vibrant, energetic worship that resonates with the younger generation while maintaining biblical foundation.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Night of Worship',
+                subtitle: 'Extended worship and prayer nights',
+                description: 'Special extended worship services where we focus entirely on praising God, often lasting several hours of uninterrupted worship.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Instruments of Praise',
+                subtitle: 'Musical excellence for God\'s glory',
+                description: 'Skilled instrumentalists offering their gifts to God, creating beautiful soundscapes that enhance the worship experience.'
+            }
+        ],
+        'community': [
+            {
+                image: 'https://images.unsplash.com/photo-1544809046-bb4777a241c9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Fellowship Meals',
+                subtitle: 'Sharing meals and building relationships',
+                description: 'Regular potluck dinners and shared meals where church members connect, share testimonies, and build authentic relationships.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Community Outreach',
+                subtitle: 'Serving and impacting our local community',
+                description: 'Outreach programs including food drives, neighborhood cleanups, and support for local shelters and community centers.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Small Groups',
+                subtitle: 'Intimate fellowship and Bible study',
+                description: 'Home-based small groups meeting weekly for Bible study, prayer, and mutual support in various neighborhoods.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Youth Activities',
+                subtitle: 'Young people connecting and growing',
+                description: 'Fun and engaging activities for youth including game nights, outings, and discipleship programs tailored for teenagers.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Family Events',
+                subtitle: 'Church family bonding and fun',
+                description: 'Family-friendly events like picnics, movie nights, and holiday celebrations that strengthen family bonds within the church.'
+            },
+            {
+                image: 'https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                title: 'Volunteer Teams',
+                subtitle: 'Serving together in various ministries',
+                description: 'Teams of volunteers working together in hospitality, children\'s ministry, maintenance, and other areas of service.'
+            }
+        ]
+    };
     
-    function initTypingSection() {
+    // Category titles for display
+    const categoryTitles = {
+        'prophetic': 'Prophetic Ministry Gallery',
+        'praise-worship': 'Praise & Worship Gallery',
+        'community': 'Community Fellowship Gallery'
+    };
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        // Wait for gallery to be loaded
+        setTimeout(initGallery, 100);
+    });
+    
+    function initGallery() {
         // Elements
-        const typingSection = document.querySelector('.typing-locked-section');
-        const typingContent = document.getElementById('typingContent');
-        const progressDots = document.querySelectorAll('.progress-dot');
-        const scrollArrow = document.querySelector('.scroll-arrow');
-        
-        // Configuration
-        const secondaryTexts = [
-            "a christ community",
-            "family",
-            "Faith driven Church",
-            "Triumphant Church"
-        ];
+        const categoryItems = document.querySelectorAll('.category-carousel-item');
+        const galleryContent = document.getElementById('galleryContent');
+        const galleryBackBtn = document.getElementById('galleryBackBtn');
+        const categoryTitle = document.getElementById('categoryTitle');
+        const galleryCategories = document.querySelector('.gallery-categories-carousel');
+        const carousel = document.querySelector('.gallery-carousel');
+        const prevBtn = document.querySelector('.carousel-arrow-prev');
+        const nextBtn = document.querySelector('.carousel-arrow-next');
+        const categoryPrevBtn = document.querySelector('.category-arrow-prev');
+        const categoryNextBtn = document.querySelector('.category-arrow-next');
+        const galleryTitle = document.querySelector('.gallery-title');
+        const expandAllBtn = document.getElementById('expandAllBtn');
+        const categoryTrack = document.querySelector('.categories-carousel-track');
         
         // State
-        let currentTextIndex = 0;
-        let isTypingSectionActive = false;
-        let isAnimating = false;
-        let scrollTimeout = null;
-        let typingScrollStart = 0;
-        let typingScrollEnd = 0;
-        let heroHeight = window.innerHeight;
-        let lastTouchY = 0;
-        let hasCompletedAllTexts = false;
+        let currentCategory = '';
+        let currentIndex = 0;
+        let isDragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
+        let galleryShown = false;
+        let categoryCurrentIndex = 0;
+        let isCategoryDragging = false;
         
         // Initialize
-        setupTypingSection();
+        setupGallery();
         
-        function setupTypingSection() {
-            // Calculate scroll boundaries - align with external component
-            heroHeight = window.innerHeight;
-            typingScrollStart = heroHeight * 4.5;
-            typingScrollEnd = heroHeight * 5.5;
-            
-            // Set initial text
-            updateTypingText(0);
-            
+        function setupGallery() {
             // Add event listeners
             addEventListeners();
             
-            // Start scroll monitoring
-            monitorScroll();
+            // Set up scroll detection for animation
+            setupScrollDetection();
         }
         
         function addEventListeners() {
-            // Mouse wheel for step-based scrolling
-            window.addEventListener('wheel', handleTypingScroll, { passive: false });
+            // Category item clicks
+            categoryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    openGallery(category);
+                });
+                
+                // Touch support for mobile
+                item.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    const category = this.getAttribute('data-category');
+                    openGallery(category);
+                });
+            });
+            
+            // Back button
+            galleryBackBtn.addEventListener('click', closeGallery);
+            
+            // Expand All button
+            expandAllBtn.addEventListener('click', expandAllImages);
+            
+            // Carousel navigation
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => navigateCarousel(-1));
+            }
+            
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => navigateCarousel(1));
+            }
+            
+            // Category carousel navigation
+            if (categoryPrevBtn) {
+                categoryPrevBtn.addEventListener('click', () => navigateCategoryCarousel(-1));
+            }
+            
+            if (categoryNextBtn) {
+                categoryNextBtn.addEventListener('click', () => navigateCategoryCarousel(1));
+            }
+            
+            // Category carousel drag for desktop
+            if (categoryTrack) {
+                categoryTrack.addEventListener('mousedown', startCategoryDrag);
+                categoryTrack.addEventListener('mousemove', dragCategory);
+                categoryTrack.addEventListener('mouseup', endCategoryDrag);
+                categoryTrack.addEventListener('mouseleave', endCategoryDrag);
+                
+                // Touch events for mobile
+                categoryTrack.addEventListener('touchstart', startCategoryDragTouch);
+                categoryTrack.addEventListener('touchmove', dragCategoryTouch);
+                categoryTrack.addEventListener('touchend', endCategoryDrag);
+            }
+            
+            // Gallery carousel drag for desktop
+            if (carousel) {
+                carousel.addEventListener('mousedown', startDrag);
+                carousel.addEventListener('mousemove', drag);
+                carousel.addEventListener('mouseup', endDrag);
+                carousel.addEventListener('mouseleave', endDrag);
+                
+                // Touch events for mobile
+                carousel.addEventListener('touchstart', startDragTouch);
+                carousel.addEventListener('touchmove', dragTouch);
+                carousel.addEventListener('touchend', endDrag);
+                
+                // Wheel scrolling
+                carousel.addEventListener('wheel', handleWheel);
+            }
             
             // Keyboard navigation
-            window.addEventListener('keydown', handleTypingKeys);
+            document.addEventListener('keydown', handleKeydown);
+        }
+        
+        function openGallery(category) {
+            if (!galleryData[category]) return;
             
-            // Touch for mobile
-            window.addEventListener('touchstart', handleTouchStart, { passive: true });
-            window.addEventListener('touchmove', handleTouchMove, { passive: false });
+            currentCategory = category;
             
-            // Click events for progress dots
-            progressDots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    const index = parseInt(this.getAttribute('data-index'));
-                    if (index !== currentTextIndex && !isAnimating) {
-                        changeTypingText(index);
-                    }
+            // Hide categories, show gallery content
+            galleryCategories.classList.add('hidden');
+            galleryContent.classList.add('active');
+            
+            // Set category title
+            categoryTitle.textContent = categoryTitles[category] || 'Gallery';
+            
+            // Load carousel items
+            loadCarouselItems(category);
+            
+            // Update URL hash for deep linking
+            window.location.hash = `gallery-${category}`;
+        }
+        
+        function closeGallery() {
+            // Show categories, hide gallery content
+            galleryCategories.classList.remove('hidden');
+            galleryContent.classList.remove('active');
+            
+            // Clear current category
+            currentCategory = '';
+            currentIndex = 0;
+            
+            // Clear URL hash
+            if (window.location.hash.includes('gallery-')) {
+                window.history.replaceState(null, null, ' ');
+            }
+        }
+        
+        function loadCarouselItems(category) {
+            if (!carousel || !galleryData[category]) return;
+            
+            // Clear existing items
+            carousel.innerHTML = '';
+            
+            // Create new items
+            galleryData[category].forEach((item, index) => {
+                const carouselItem = document.createElement('div');
+                carouselItem.className = `gallery-carousel-item ${index === 0 ? 'active' : ''}`;
+                carouselItem.setAttribute('data-index', index);
+                
+                carouselItem.innerHTML = `
+                    <div class="carousel-image-container">
+                        <img src="${item.image}" 
+                             alt="${item.title}" 
+                             class="carousel-img"
+                             loading="lazy">
+                        <div class="carousel-text-overlay">
+                            <h3 class="carousel-caption">${item.title}</h3>
+                            <p class="carousel-subtitle">${item.subtitle}</p>
+                            <button class="expand-button" data-index="${index}">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/>
+                                </svg>
+                                <span>Expand</span>
+                            </button>
+                            <div class="expanded-content" style="display: none; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                                <p class="expanded-description">${item.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                carousel.appendChild(carouselItem);
+                
+                // Add click event to expand button
+                const expandBtn = carouselItem.querySelector('.expand-button');
+                expandBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const idx = parseInt(this.getAttribute('data-index'));
+                    toggleExpand(idx);
                 });
             });
             
-            // Resize handling
-            window.addEventListener('resize', handleResize);
-            
-            // Scroll arrow click
-            if (scrollArrow) {
-                scrollArrow.addEventListener('click', () => {
-                    if (currentTextIndex < secondaryTexts.length - 1 && !isAnimating) {
-                        changeTypingText(currentTextIndex + 1);
-                    }
-                });
-            }
+            // Update carousel functionality
+            updateCarousel();
         }
         
-        function handleTypingScroll(e) {
-            if (!isTypingSectionActive) return;
+        function toggleExpand(index) {
+            const carouselItems = document.querySelectorAll('.gallery-carousel-item');
+            const carouselItem = carouselItems[index];
             
-            // Get current scroll position
-            const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-            const isInTypingSection = scrollY >= typingScrollStart && scrollY <= typingScrollEnd;
+            if (!carouselItem) return;
             
-            if (!isInTypingSection || isAnimating) return;
+            const expandedContent = carouselItem.querySelector('.expanded-content');
+            const expandBtn = carouselItem.querySelector('.expand-button span');
             
-            // Determine direction
-            const direction = e.deltaY > 0 ? 'down' : 'up';
-            
-            // Check if we can scroll to next/previous section
-            if (direction === 'down' && currentTextIndex === secondaryTexts.length - 1) {
-                // On last text and scrolling down - allow scroll to next section
-                // No preventDefault, let natural scroll happen
-                updateScrollInstruction("Scroll to exit section");
-                hasCompletedAllTexts = true;
-                return;
-            } else if (direction === 'up' && currentTextIndex === 0) {
-                // On first text and scrolling up - allow scroll to previous section
-                // No preventDefault, let natural scroll happen
-                updateScrollInstruction("Scroll to previous section");
-                return;
-            }
-            
-            // Otherwise, handle text navigation
-            e.preventDefault();
-            
-            if (direction === 'down' && currentTextIndex < secondaryTexts.length - 1) {
-                // Scroll down - next text
-                changeTypingText(currentTextIndex + 1);
-            } else if (direction === 'up' && currentTextIndex > 0) {
-                // Scroll up - previous text
-                changeTypingText(currentTextIndex - 1);
-            }
-            
-            // Add slight scroll movement for feedback
-            const scrollAmount = direction === 'down' ? 80 : -80;
-            let newScrollY = scrollY + scrollAmount;
-            
-            // Clamp to typing section boundaries
-            newScrollY = Math.max(typingScrollStart, Math.min(typingScrollEnd, newScrollY));
-            
-            window.scrollTo({ top: newScrollY, behavior: 'smooth' });
-            
-            // Set timeout to prevent rapid scrolling
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                isAnimating = false;
-            }, 500);
-        }
-        
-        function handleTypingKeys(e) {
-            if (!isTypingSectionActive || isAnimating) return;
-            
-            // Arrow down or space for next text
-            if (e.key === 'ArrowDown' || e.key === ' ' || e.key === 'PageDown') {
-                e.preventDefault();
-                if (currentTextIndex < secondaryTexts.length - 1) {
-                    changeTypingText(currentTextIndex + 1);
-                } else {
-                    // Last text - scroll to next section
-                    scrollToNextSection();
-                }
-            }
-            // Arrow up for previous text
-            else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-                e.preventDefault();
-                if (currentTextIndex > 0) {
-                    changeTypingText(currentTextIndex - 1);
-                } else {
-                    // First text - scroll to previous section
-                    scrollToPreviousSection();
-                }
-            }
-            // Number keys 1-4 for direct navigation
-            else if (e.key >= '1' && e.key <= '4') {
-                e.preventDefault();
-                const index = parseInt(e.key) - 1;
-                if (index < secondaryTexts.length && index !== currentTextIndex) {
-                    changeTypingText(index);
-                }
-            }
-            // Enter key for next
-            else if (e.key === 'Enter') {
-                e.preventDefault();
-                if (currentTextIndex < secondaryTexts.length - 1) {
-                    changeTypingText(currentTextIndex + 1);
-                } else {
-                    // Last text - scroll to next section
-                    scrollToNextSection();
-                }
-            }
-        }
-        
-        // Touch handling for mobile
-        let touchStartY = 0;
-        let isTouchScrolling = false;
-        
-        function handleTouchStart(e) {
-            if (!isTypingSectionActive) return;
-            touchStartY = e.touches[0].clientY;
-            lastTouchY = touchStartY;
-            isTouchScrolling = false;
-        }
-        
-        function handleTouchMove(e) {
-            if (!isTypingSectionActive || isAnimating) return;
-            
-            const touchY = e.touches[0].clientY;
-            const deltaY = lastTouchY - touchY;
-            lastTouchY = touchY;
-            
-            // Check if we're at boundaries
-            const atFirstText = currentTextIndex === 0;
-            const atLastText = currentTextIndex === secondaryTexts.length - 1;
-            const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // Only handle if we're within typing section
-            const isInTypingSection = scrollY >= typingScrollStart && scrollY <= typingScrollEnd;
-            if (!isInTypingSection) return;
-            
-            // Prevent default to stop page scroll
-            e.preventDefault();
-            
-            // Swipe detection for text change
-            if (Math.abs(touchStartY - touchY) > 50 && !isTouchScrolling) {
-                isTouchScrolling = true;
-                
-                if (deltaY > 5 && !atLastText) {
-                    // Swipe up - next text
-                    changeTypingText(currentTextIndex + 1);
-                    return;
-                } else if (deltaY < -5 && !atFirstText) {
-                    // Swipe down - previous text
-                    changeTypingText(currentTextIndex - 1);
-                    return;
-                }
-            }
-            
-            // If at boundaries, allow scroll to next/previous section
-            if (atLastText && deltaY > 20) {
-                // On last text and strong swipe down - scroll to next section
-                scrollToNextSection();
-                return;
-            } else if (atFirstText && deltaY < -20) {
-                // On first text and strong swipe up - scroll to previous section
-                scrollToPreviousSection();
-                return;
-            }
-            
-            // Small scroll adjustments
-            let newScrollY = scrollY + deltaY * 2;
-            newScrollY = Math.max(typingScrollStart, Math.min(typingScrollEnd, newScrollY));
-            window.scrollTo({ top: newScrollY, behavior: 'auto' });
-        }
-        
-        function scrollToNextSection() {
-            // Scroll to section after typing section
-            const nextSectionStart = typingScrollEnd + heroHeight * 0.1;
-            window.scrollTo({ top: nextSectionStart, behavior: 'smooth' });
-            updateScrollInstruction("Scrolling to next section...");
-        }
-        
-        function scrollToPreviousSection() {
-            // Scroll to section before typing section
-            const previousSectionEnd = typingScrollStart - heroHeight * 0.1;
-            window.scrollTo({ top: previousSectionEnd, behavior: 'smooth' });
-            updateScrollInstruction("Scrolling to previous section...");
-        }
-        
-        function updateScrollInstruction(text) {
-            const instruction = document.querySelector('.typing-instruction span');
-            if (instruction) {
-                instruction.textContent = text;
-                // Reset after 2 seconds
-                setTimeout(() => {
-                    if (currentTextIndex === secondaryTexts.length - 1 && hasCompletedAllTexts) {
-                        instruction.textContent = "Scroll to exit section";
-                    } else {
-                        instruction.textContent = "Scroll to change text";
-                    }
-                }, 2000);
-            }
-        }
-        
-        function changeTypingText(index) {
-            if (index < 0 || index >= secondaryTexts.length || isAnimating) return;
-            
-            isAnimating = true;
-            currentTextIndex = index;
-            
-            // Update completion state
-            hasCompletedAllTexts = (index === secondaryTexts.length - 1);
-            
-            // Update scroll instruction based on position
-            if (index === secondaryTexts.length - 1) {
-                updateScrollInstruction("Scroll to exit section");
-            } else if (index === 0) {
-                updateScrollInstruction("Scroll to previous section");
+            if (expandedContent.style.display === 'block') {
+                // Collapse
+                expandedContent.style.display = 'none';
+                expandBtn.textContent = 'Expand';
             } else {
-                updateScrollInstruction("Scroll to change text");
+                // Expand
+                expandedContent.style.display = 'block';
+                expandBtn.textContent = 'Collapse';
             }
+        }
+        
+        function expandAllImages() {
+            const carouselItems = document.querySelectorAll('.gallery-carousel-item');
             
-            // Animate text change
-            if (typingContent) {
-                typingContent.classList.add('typing-text-exit');
+            carouselItems.forEach((item, index) => {
+                const expandedContent = item.querySelector('.expanded-content');
+                const expandBtn = item.querySelector('.expand-button span');
                 
-                setTimeout(() => {
-                    // Update text
-                    typingContent.textContent = secondaryTexts[index];
-                    // Remove exit class and add enter class
-                    typingContent.classList.remove('typing-text-exit');
-                    typingContent.classList.add('typing-text-enter');
-                    
-                    // Update progress dots
-                    updateProgressDots(index);
-                    
-                    // Calculate and set scroll position
-                    const textCount = secondaryTexts.length;
-                    if (textCount > 1) {
-                        const progress = index / (textCount - 1);
-                        const newScrollY = typingScrollStart + (typingScrollEnd - typingScrollStart) * progress;
-                        window.scrollTo({ top: newScrollY, behavior: 'smooth' });
-                    }
-                    
-                    // Remove enter animation after completion
-                    setTimeout(() => {
-                        typingContent.classList.remove('typing-text-enter');
-                        isAnimating = false;
-                    }, 500);
-                }, 300);
-            } else {
-                isAnimating = false;
-            }
-        }
-        
-        function updateTypingText(index) {
-            if (index < 0 || index >= secondaryTexts.length) return;
-            
-            currentTextIndex = index;
-            hasCompletedAllTexts = (index === secondaryTexts.length - 1);
-            
-            if (typingContent) {
-                typingContent.textContent = secondaryTexts[index];
-            }
-            updateProgressDots(index);
-            
-            // Update scroll instruction
-            if (index === secondaryTexts.length - 1) {
-                updateScrollInstruction("Scroll to exit section");
-            } else if (index === 0) {
-                updateScrollInstruction("Scroll to previous section");
-            }
-        }
-        
-        function updateProgressDots(index) {
-            progressDots.forEach((dot, dotIndex) => {
-                if (dotIndex === index) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
+                if (expandedContent && expandBtn) {
+                    expandedContent.style.display = 'block';
+                    expandBtn.textContent = 'Collapse';
                 }
             });
         }
         
-        function monitorScroll() {
-            let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        function updateCarousel() {
+            const carouselItems = document.querySelectorAll('.gallery-carousel-item');
+            
+            // Reset index
+            currentIndex = 0;
+            
+            // Set first item as active
+            updateActiveItem(0);
+        }
+        
+        function navigateCarousel(direction) {
+            const carouselItems = document.querySelectorAll('.gallery-carousel-item');
+            if (carouselItems.length === 0) return;
+            
+            let newIndex = currentIndex + direction;
+            
+            if (newIndex < 0) newIndex = carouselItems.length - 1;
+            if (newIndex >= carouselItems.length) newIndex = 0;
+            
+            currentIndex = newIndex;
+            
+            // Scroll to the slide
+            const itemWidth = carouselItems[0].offsetWidth + 30; // width + gap
+            carousel.scrollLeft = itemWidth * newIndex;
+            
+            // Update active item
+            updateActiveItem(newIndex);
+        }
+        
+        function navigateCategoryCarousel(direction) {
+            const categoryItems = document.querySelectorAll('.category-carousel-item');
+            if (categoryItems.length === 0) return;
+            
+            let newIndex = categoryCurrentIndex + direction;
+            
+            if (newIndex < 0) newIndex = categoryItems.length - 1;
+            if (newIndex >= categoryItems.length) newIndex = 0;
+            
+            categoryCurrentIndex = newIndex;
+            
+            // Scroll to the slide
+            const itemWidth = categoryItems[0].offsetWidth + 30; // width + gap
+            categoryTrack.scrollLeft = itemWidth * newIndex;
+        }
+        
+        function updateActiveItem(index) {
+            const carouselItems = document.querySelectorAll('.gallery-carousel-item');
+            
+            // Remove active class from all items
+            carouselItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Add active class to current item
+            if (carouselItems[index]) {
+                carouselItems[index].classList.add('active');
+            }
+        }
+        
+        // Category carousel drag functions
+        function startCategoryDrag(e) {
+            isCategoryDragging = true;
+            categoryTrack.classList.add('dragging');
+            startX = e.pageX - categoryTrack.offsetLeft;
+            scrollLeft = categoryTrack.scrollLeft;
+        }
+        
+        function dragCategory(e) {
+            if (!isCategoryDragging) return;
+            e.preventDefault();
+            const x = e.pageX - categoryTrack.offsetLeft;
+            const walk = (x - startX) * 2;
+            categoryTrack.scrollLeft = scrollLeft - walk;
+        }
+        
+        function startCategoryDragTouch(e) {
+            isCategoryDragging = true;
+            categoryTrack.classList.add('dragging');
+            startX = e.touches[0].pageX - categoryTrack.offsetLeft;
+            scrollLeft = categoryTrack.scrollLeft;
+        }
+        
+        function dragCategoryTouch(e) {
+            if (!isCategoryDragging) return;
+            const x = e.touches[0].pageX - categoryTrack.offsetLeft;
+            const walk = (x - startX) * 2;
+            categoryTrack.scrollLeft = scrollLeft - walk;
+        }
+        
+        function endCategoryDrag() {
+            isCategoryDragging = false;
+            categoryTrack.classList.remove('dragging');
+        }
+        
+        // Gallery carousel drag functions
+        function startDrag(e) {
+            isDragging = true;
+            carousel.classList.add('dragging');
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        }
+        
+        function drag(e) {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2;
+            carousel.scrollLeft = scrollLeft - walk;
+            updateActiveFromScroll();
+        }
+        
+        function startDragTouch(e) {
+            isDragging = true;
+            carousel.classList.add('dragging');
+            startX = e.touches[0].pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        }
+        
+        function dragTouch(e) {
+            if (!isDragging) return;
+            const x = e.touches[0].pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2;
+            carousel.scrollLeft = scrollLeft - walk;
+            updateActiveFromScroll();
+        }
+        
+        function endDrag() {
+            isDragging = false;
+            carousel.classList.remove('dragging');
+            snapToNearestSlide();
+        }
+        
+        function updateActiveFromScroll() {
+            const carouselItems = document.querySelectorAll('.gallery-carousel-item');
+            if (carouselItems.length === 0) return;
+            
+            const scrollPosition = carousel.scrollLeft;
+            const itemWidth = carouselItems[0].offsetWidth + 30;
+            const newIndex = Math.round(scrollPosition / itemWidth);
+            
+            if (newIndex !== currentIndex) {
+                currentIndex = Math.max(0, Math.min(newIndex, carouselItems.length - 1));
+                updateActiveItem(currentIndex);
+            }
+        }
+        
+        function snapToNearestSlide() {
+            const carouselItems = document.querySelectorAll('.gallery-carousel-item');
+            if (carouselItems.length === 0) return;
+            
+            const scrollPosition = carousel.scrollLeft;
+            const itemWidth = carouselItems[0].offsetWidth + 30;
+            const newIndex = Math.round(scrollPosition / itemWidth);
+            
+            navigateCarousel(newIndex - currentIndex);
+        }
+        
+        function handleWheel(e) {
+            if (!carousel) return;
+            
+            // Prevent vertical scrolling
+            if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
+                e.preventDefault();
+            }
+            
+            // Smooth horizontal scrolling with wheel
+            carousel.scrollLeft += e.deltaY * 0.5;
+            updateActiveFromScroll();
+        }
+        
+        function handleKeydown(e) {
+            if (!currentCategory) return;
+            
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                navigateCarousel(-1);
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                navigateCarousel(1);
+            } else if (e.key === 'Escape') {
+                closeGallery();
+            }
+        }
+        
+        function setupScrollDetection() {
             let ticking = false;
             
             function checkScroll() {
                 const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+                const heroHeight = window.innerHeight;
+                const galleryProgress = Math.min(Math.max((scrollY - heroHeight * 2.5) / (heroHeight * 0.5), 0), 1);
                 
-                // Check if we're in typing section
-                const isInTypingSection = scrollY >= typingScrollStart && scrollY <= typingScrollEnd;
-                
-                // Activate/deactivate typing section
-                if (isInTypingSection && !isTypingSectionActive) {
-                    isTypingSectionActive = true;
-                    typingSection.classList.add('active');
-                    // Hide main scroll indicator if it exists
-                    const mainScrollIndicator = document.querySelector('.scroll-indicator:not(.typing-instruction)');
-                    if (mainScrollIndicator) {
-                        mainScrollIndicator.classList.add('hidden');
-                    }
-                    
-                    // Reset completion state when entering typing section
-                    hasCompletedAllTexts = (currentTextIndex === secondaryTexts.length - 1);
-                } else if (!isInTypingSection && isTypingSectionActive) {
-                    isTypingSectionActive = false;
-                    typingSection.classList.remove('active');
-                    // Show main scroll indicator if at top
-                    const mainScrollIndicator = document.querySelector('.scroll-indicator:not(.typing-instruction)');
-                    if (mainScrollIndicator && scrollY < heroHeight * 0.1) {
-                        mainScrollIndicator.classList.remove('hidden');
-                    }
-                    
-                    // Reset scroll instruction when leaving
-                    const instruction = document.querySelector('.typing-instruction span');
-                    if (instruction) {
-                        instruction.textContent = "Scroll to change text";
-                    }
+                // Show gallery title
+                if (galleryProgress > 0.2 && !galleryShown) {
+                    galleryShown = true;
+                    galleryTitle.classList.add('visible');
+                } else if (galleryProgress <= 0.2 && galleryShown) {
+                    galleryShown = false;
+                    galleryTitle.classList.remove('visible');
                 }
                 
-                // If not in typing section, skip further processing
-                if (!isInTypingSection) {
-                    ticking = false;
-                    return;
-                }
-                
-                // Calculate progress for typing section
-                const typingProgressValue = (scrollY - typingScrollStart) / (typingScrollEnd - typingScrollStart);
-                
-                // Snap to nearest text based on scroll position (backup for direct scroll)
-                const textCount = secondaryTexts.length;
-                if (textCount > 1) {
-                    const calculatedIndex = Math.round(typingProgressValue * (textCount - 1));
-                    
-                    // Only update if not currently animating and index has changed
-                    if (calculatedIndex !== currentTextIndex && !isAnimating) {
-                        updateTypingText(calculatedIndex);
-                    }
-                }
-                
-                lastScrollY = scrollY;
                 ticking = false;
             }
             
@@ -751,28 +1391,32 @@
                 }
             });
             
+            // Check URL hash on load
+            checkHash();
+            
             // Initial check
             checkScroll();
         }
         
-        function handleResize() {
-            heroHeight = window.innerHeight;
-            typingScrollStart = heroHeight * 4.5;
-            typingScrollEnd = heroHeight * 5.5;
+        function checkHash() {
+            const hash = window.location.hash;
+            if (hash.includes('gallery-')) {
+                const category = hash.replace('#gallery-', '');
+                if (galleryData[category]) {
+                    // Small delay to ensure DOM is ready
+                    setTimeout(() => {
+                        openGallery(category);
+                    }, 300);
+                }
+            }
         }
         
-        // Cleanup function
-        function cleanup() {
-            window.removeEventListener('wheel', handleTypingScroll);
-            window.removeEventListener('keydown', handleTypingKeys);
-            window.removeEventListener('touchstart', handleTouchStart);
-            window.removeEventListener('touchmove', handleTouchMove);
-            window.removeEventListener('resize', handleResize);
-            if (scrollTimeout) clearTimeout(scrollTimeout);
-        }
-        
-        // Cleanup on page unload
-        window.addEventListener('beforeunload', cleanup);
+        // Handle browser back button
+        window.addEventListener('popstate', function() {
+            if (!window.location.hash.includes('gallery-') && currentCategory) {
+                closeGallery();
+            }
+        });
     }
 })();
 </script>
